@@ -3,15 +3,15 @@ let abs_path_pages =
 
 const routes = {
   home: {
-    linkLabel: "Home",
+    linkLabel: "HOME",
     namePage: "home",
   },
   about: {
-    linkLabel: "About",
+    linkLabel: "ABOUT",
     namePage: "about",
   },
   login: {
-    linkLabel: "Login",
+    linkLabel: "LOGIN",
     namePage: "login",
   },
 };
@@ -24,7 +24,7 @@ Object.keys(routes).forEach((route) => {
 
   let str = `
     <li class="nav-item">
-      <a class="nav-link link" aria-current="page" href="${route}">${linkLabel}</a>
+      <a class="nav-link link text-dark" aria-current="page" href="${route}">${linkLabel}</a>
     </li>
     `;
   links.insertAdjacentHTML("beforeend", str);
@@ -51,9 +51,9 @@ for (let i = 0; i < links_a.length; i++) {
 
 function loadContent() {
   let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
-  let html = abs_path_pages + routes[route].namePage + ".html";
-  console.log(html);
-  // Fetch the content of the corresponding HTML file 
+  let html = abs_path_pages + "home.html";
+  if (route != "") html = abs_path_pages + routes[route].namePage + ".html";
+  // Fetch the content of the corresponding HTML file
   fetch(html)
     .then((response) => {
       if (!response.ok) {
@@ -71,4 +71,8 @@ function loadContent() {
     });
 }
 
-loadContent();
+// to initialize for the router
+(function initialize() {
+  links_a[0].classList.add("active");
+  loadContent();
+})();
