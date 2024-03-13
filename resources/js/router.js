@@ -1,88 +1,66 @@
-let abs_path_pages =
-  window.location.origin + "/ITI-Javascrit-Project/resources/pages/";
+export default class Router {
+  constructor(routes) {
+    this.abs_path_pages = window.location.origin + "/ITI-Javascrit-Project/resources/pages/";
+    this.routes = routes;
+    this.links = document.getElementById("links");
+  }
 
-const routes = {
-  home: {
-    linkLabel: "HOME",
-    namePage: "home",
-  },
-  about: {
-    linkLabel: "ABOUT",
-    namePage: "about",
-  },
-  login: {
-    linkLabel: "LOGIN",
-    namePage: "login",
-  },
-  contact: {
-    linkLabel: "CONTACT",
-    namePage: "contact",
-  },
-};
+  loadRouter() {
+    Object.keys(this.routes).forEach((route) => {
+      const { linkLabel } = this.routes[route];
 
-let links = document.getElementById("links");
-// to get keys and create a element to the array of objects
-
-Object.keys(routes).forEach((route) => {
-  const { linkLabel } = routes[route];
-
-  let str = `
-    <li class="nav-item">
-      <a class="nav-link link text-dark" aria-current="page" href="${route}">${linkLabel}</a>
-    </li>
-    `;
-  links.insertAdjacentHTML("beforeend", str);
-});
-
-// to get links  a element
-let links_a = document.querySelectorAll(".link");
-
-// to prevent default
-for (let i = 0; i < links_a.length; i++) {
-  links_a[i].addEventListener("click", (e) => {
-    e.preventDefault();
-    const { href } = e.target;
-    // to remove active from all links
-    links_a.forEach((link) => {
-      link.classList.remove("active");
+      let str = `
+        <li class="nav-item">
+          <a class="nav-link link text-dark" aria-current="page" href="${route}">${linkLabel}</a>
+        </li>
+        `;
+      this.links.insertAdjacentHTML("beforeend", str);
     });
-    // add active for link that is clicked
-    e.target.classList.add("active");
-    history.pushState({}, "", href);
-    loadContent();
-  });
-}
 
-function loadContent() {
-  let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
-  let html = abs_path_pages + "home.html";
-  if (route != "") html = abs_path_pages + routes[route].namePage + ".html";
-  // Fetch the content of the corresponding HTML file
-  fetch(html)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to load page");
-      }
-      return response.text();
-    })
-    .then((htmlContent) => {
-      // Load the retrieved content into the #content div
-      document.getElementById("app").innerHTML = htmlContent;
-    })
-    .catch((error) => {
-      // Handle error
-      console.error("Error loading page:", error);
-    });
-}
+    this.links_a = document.querySelectorAll(".link");
 
-// to initialize for the router
-(function initialize() {
-  let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
-  if (route == "") links_a[0].classList.add("active");
-  else
-    for (let i = 0; i < links_a.length; i++) {
-      if (route === links_a[i].getAttribute("href"))
-        links_a[i].classList.add("active");
+    for (let i = 0; i < this.links_a.length; i++) {
+      this.links_a[i].addEventListener("click", (e) => {
+        console.log({ e });
+        e.preventDefault();
+        const { href } = e.target;
+        this.links_a.forEach((link) => {
+          link.classList.remove("active");
+        });
+        e.target.classList.add("active");
+        history.pushState({}, "", href);
+        this.loadContent();
+      });
     }
-  loadContent();
-})();
+  }
+
+  loadContent() {
+    let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
+    let html = this.abs_path_pages + "home.html";
+    if (route != "") html = this.abs_path_pages + this.routes[route].namePage + ".html";
+    fetch(html)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load page");
+        }
+        return response.text();
+      })
+      .then((htmlRoutes) => {
+        document.getElementById("app").innerHTML = htmlRoutes;
+      })
+      .catch((error) => {
+        console.error("Error loading page:", error);
+      });
+
+    let links_a = document.querySelectorAll(".link");
+    if (route == "") {
+      links_a[0].classList.add("active");
+    }
+    else
+      for (let i = 0; i < links_a.length; i++) {
+        if (route === links_a[i].getAttribute("href")) {
+          links_a[i].classList.add("active");
+        }
+      }
+  }
+}
