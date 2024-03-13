@@ -1,5 +1,5 @@
 let abs_path_pages =
-  window.location.origin + "/FinalProjectJavaScript/resources/pages/";
+  window.location.origin + "/jsproject/resources/pages/";
 
 const routes = {
   home: {
@@ -14,6 +14,11 @@ const routes = {
     linkLabel: "LOGIN",
     namePage: "login",
   },
+  contact: {
+    linkLabel: "Contact us",
+    namePage: "contact",
+  },
+
 };
 
 let links = document.getElementById("links");
