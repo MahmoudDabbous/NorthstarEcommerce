@@ -93,8 +93,9 @@
   border-radius: 50px;
 }
 
-.container {
-  margin-top: 100px;
+.itempage-icons {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
 }
 /* css for common */
 
