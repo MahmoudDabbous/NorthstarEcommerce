@@ -57,6 +57,45 @@
 }
 /* css for home page */
 
+/* css for Item Page*/
+.itempage-div-image {
+  width: 50% !important;
+  margin: 4rem !important;
+  padding-left: 8rem !important;
+}
+
+.itempage-header {
+  font-size: 3rem !important;
+}
+
+.itempage-price {
+  font-size: 2rem !important;
+  margin-right: 4rem !important;
+}
+
+.itempage-rightdetails {
+  margin-top: 4rem !important;
+}
+
+.itempage-paragraph {
+  margin: 2rem 0rem !important;
+}
+
+.itempage-dropdown {
+  margin: 2rem 0rem !important;
+}
+
+.itempage-adding-btn {
+  margin: 2rem 0rem !important;
+}
+
+.btn.btn-rounded {
+  border-radius: 50px;
+}
+
+.container {
+  margin-top: 100px;
+}
 /* css for common */
 
 .color-text-website {

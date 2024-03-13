@@ -14,6 +14,10 @@ const routes = {
     linkLabel: "LOGIN",
     namePage: "login",
   },
+  itempage: {
+    linkLabel: "ITEM PAGE",
+    namePage: "itempage",
+  },
   contact: {
     linkLabel: "CONTACT",
     namePage: "contact",
