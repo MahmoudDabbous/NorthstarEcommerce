@@ -1,5 +1,5 @@
 let abs_path_pages =
-  window.location.origin + "/FinalProjectJavaScript/resources/pages/";
+  window.location.origin + "/ITI-Javascrit-Project/resources/pages/";
 
 const routes = {
   home: {
@@ -13,6 +13,10 @@ const routes = {
   login: {
     linkLabel: "LOGIN",
     namePage: "login",
+  },
+  contact: {
+    linkLabel: "CONTACT",
+    namePage: "contact",
   },
 };
 
@@ -73,6 +77,12 @@ function loadContent() {
 
 // to initialize for the router
 (function initialize() {
-  links_a[0].classList.add("active");
+  let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
+  if (route == "") links_a[0].classList.add("active");
+  else
+    for (let i = 0; i < links_a.length; i++) {
+      if (route === links_a[i].getAttribute("href"))
+        links_a[i].classList.add("active");
+    }
   loadContent();
 })();

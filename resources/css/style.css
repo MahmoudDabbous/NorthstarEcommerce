@@ -1,9 +1,13 @@
-.contact-bg{
-    background-image: url('../images/banners/401ee6dd7cb8b32f35703f88f482980a.jpeg');
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    height: 50vh;
+/* css for contact page */
+.contact-bg {
+  background-image: url("../images/banners/401ee6dd7cb8b32f35703f88f482980a.jpeg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  height: 50vh;
 }
+/* css for contact page */
+
+/* css for home page */
 #search-inpt-home {
   border: none !important;
   border-bottom: 1px solid #eee !important;
@@ -40,12 +44,6 @@
   font-weight: bold !important;
 }
 
-.color-text-website{
-  color: #024e82 !important;
-}
-.bg-website{
-  background-color: #024e82 !important;;
-}
 #img-home {
   background-image: url("../images/home-main.jpeg");
   background-position: center;
@@ -54,6 +52,17 @@
   max-height: 600px;
 }
 
-#badge-span-header{
+#badge-span-header {
   background-color: #024e82 !important;
 }
+/* css for home page */
+
+/* css for common */
+
+.color-text-website {
+  color: #024e82 !important;
+}
+.bg-website {
+  background-color: #024e82 !important;
+}
+/* css for common  */
