@@ -18,6 +18,10 @@ const routes = {
     linkLabel: "CONTACT",
     namePage: "contact",
   },
+  register: {
+    linkLabel: "REGISTER",
+    namePage: "register",
+  }
 };
 
 let links = document.getElementById("links");
