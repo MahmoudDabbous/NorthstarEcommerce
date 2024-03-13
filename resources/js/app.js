@@ -1,3 +1,4 @@
+import './bootstrap.bundle.min.js';
 import Router from './router.js';
 
 const routes = new Router({

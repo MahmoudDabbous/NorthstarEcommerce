@@ -18,10 +18,9 @@ export default class Router {
     });
 
     this.links_a = document.querySelectorAll(".link");
-
+    
     for (let i = 0; i < this.links_a.length; i++) {
       this.links_a[i].addEventListener("click", (e) => {
-        console.log({ e });
         e.preventDefault();
         const { href } = e.target;
         this.links_a.forEach((link) => {
@@ -32,12 +31,12 @@ export default class Router {
         this.loadContent();
       });
     }
+    this.loadContent();
   }
 
   loadContent() {
     let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
-    let html = this.abs_path_pages + "home.html";
-    if (route != "") html = this.abs_path_pages + this.routes[route].namePage + ".html";
+    let html = this.abs_path_pages + (route === "" ? "home" : this.routes[route].namePage) + ".html";
     fetch(html)
       .then((response) => {
         if (!response.ok) {
