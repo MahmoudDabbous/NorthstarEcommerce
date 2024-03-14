@@ -18,6 +18,10 @@ const routes = new Router({
         linkLabel: "CONTACT",
         namePage: "contact",
     },
+  register: {
+    linkLabel: "REGISTER",
+    namePage: "register",
+  }
 });
 
 (function () {
