@@ -22,6 +22,10 @@ const routes = {
     linkLabel: "CONTACT",
     namePage: "contact",
   },
+  register: {
+    linkLabel: "REGISTER",
+    namePage: "register",
+  }
 };
 
 let links = document.getElementById("links");
@@ -59,8 +63,10 @@ for (let i = 0; i < links_a.length; i++) {
 
 function loadContent() {
   let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
+
   let html = abs_path_pages + "home.html";
   if (route != "") html = abs_path_pages + routes[route].namePage + ".html";
+
   // Fetch the content of the corresponding HTML file
   fetch(html)
     .then((response) => {
@@ -79,6 +85,7 @@ function loadContent() {
     });
 }
 
+
 // to initialize for the router
 (function initialize() {
   let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
@@ -90,3 +97,4 @@ function loadContent() {
     }
   loadContent();
 })();
+

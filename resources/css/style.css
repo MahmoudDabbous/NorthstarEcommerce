@@ -1,3 +1,4 @@
+
 /* css for contact page */
 .contact-bg {
   background-image: url("../images/banners/401ee6dd7cb8b32f35703f88f482980a.jpeg");
@@ -106,3 +107,74 @@
   background-color: #024e82 !important;
 }
 /* css for common  */
+
+.header-container-about {
+  height: 500px;
+  background-size: cover; /*cover whole div*/
+  background-repeat: no-repeat;
+  background-position: 20%;
+  background-image: url("../images/header_img.jpg");
+}
+
+/* for 2 classes with the same name */
+.model1-about {
+  width: calc(50% - 15px);
+  height: 500px;
+  background-size: cover; /*cover whole div*/
+  background-repeat: no-repeat;
+  background-position: 20%;
+  background-image: url(../images/women/first_img.jpg);
+}
+
+#model2-about {
+  width: calc(50% - 15px);
+  height: 500px;
+  background-size: cover; /*cover whole div*/
+  background-repeat: no-repeat;
+  background-position: 20%;
+  background-image: url(../images/men/second_img.jpg);
+}
+
+.founders-text-about {
+  margin-top: 100px;
+  font-weight: bold;
+}
+
+.testimonials-text-about {
+  margin-top: 200px;
+}
+
+@media (max-width: 575px) {
+  .comments-about {
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .image-wrapper-about {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+  }
+  .model1-about {
+    width: 100% !important;
+    background-size: contain !important;
+    height: 350px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .founder-about {
+    width: 300px;
+  }
+  .founder-container-about {
+    flex-wrap: wrap; /* when overflowing wrap */
+    margin-top: 100px;
+  }
+}
+
