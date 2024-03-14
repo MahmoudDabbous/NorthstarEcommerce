@@ -1,3 +1,73 @@
+
+/* css for contact page */
+.contact-bg {
+  background-image: url("../images/banners/401ee6dd7cb8b32f35703f88f482980a.jpeg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  height: 50vh;
+}
+/* css for contact page */
+
+/* css for home page */
+#search-inpt-home {
+  border: none !important;
+  border-bottom: 1px solid #eee !important;
+  outline: none !important;
+  background-color: transparent;
+  color: white;
+}
+
+#search-btn-home {
+  border: none !important;
+  outline: none !important;
+  background-color: transparent;
+  color: white;
+}
+
+.link-home {
+  margin-left: 5px !important;
+}
+
+.header-link-home {
+  font-weight: bold;
+}
+#app {
+  /* height: 100vh; */
+}
+
+.navbar div {
+  /* top left bottom right   */
+  padding: 10px 5px 0px 15px;
+}
+
+.active {
+  color: #024e82 !important;
+  font-weight: bold !important;
+}
+
+#img-home {
+  background-image: url("../images/home-main.jpeg");
+  background-position: center;
+  background-size: cover;
+  min-height: 500px;
+  max-height: 600px;
+}
+
+#badge-span-header {
+  background-color: #024e82 !important;
+}
+/* css for home page */
+
+/* css for common */
+
+.color-text-website {
+  color: #024e82 !important;
+}
+.bg-website {
+  background-color: #024e82 !important;
+}
+/* css for common  */
+
 .header-container-about {
   height: 500px;
   background-size: cover; /*cover whole div*/
@@ -67,3 +137,4 @@
     margin-top: 100px;
   }
 }
+
