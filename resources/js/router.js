@@ -1,5 +1,5 @@
 let abs_path_pages =
-  window.location.origin + "/FinalProjectJavaScript/resources/pages/";
+  window.location.origin + "/ITI-Javascrit-Project/resources/pages/";
 
 const routes = {
   home: {
@@ -14,6 +14,14 @@ const routes = {
     linkLabel: "LOGIN",
     namePage: "login",
   },
+  contact: {
+    linkLabel: "CONTACT",
+    namePage: "contact",
+  },
+  register: {
+    linkLabel: "REGISTER",
+    namePage: "register",
+  }
 };
 
 let links = document.getElementById("links");
@@ -51,8 +59,10 @@ for (let i = 0; i < links_a.length; i++) {
 
 function loadContent() {
   let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
+
   let html = abs_path_pages + "home.html";
   if (route != "") html = abs_path_pages + routes[route].namePage + ".html";
+
   // Fetch the content of the corresponding HTML file
   fetch(html)
     .then((response) => {
@@ -71,8 +81,16 @@ function loadContent() {
     });
 }
 
+
 // to initialize for the router
 (function initialize() {
-  links_a[0].classList.add("active");
+  let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
+  if (route == "") links_a[0].classList.add("active");
+  else
+    for (let i = 0; i < links_a.length; i++) {
+      if (route === links_a[i].getAttribute("href"))
+        links_a[i].classList.add("active");
+    }
   loadContent();
 })();
+

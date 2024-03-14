@@ -12,6 +12,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <!-- myown css stylesheet -->
+    <title>Final Project JavaScript</title>
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="resources/css/style.css" />
   </head>
 
@@ -47,13 +50,12 @@
                   >
                   </a>
                 </li>
-                <li class="nav-item position-relative">
+                <li class="nav-item">
                   <a
-                    class="nav-link link text-dark fa-solid fa-bag-shopping"
+                    class="nav-link link text-dark position-relative fa-solid fa-bag-shopping"
                     aria-current="page"
                     href="home"
                   >
-                  </a>
                   <span
                     id="badge-span-header"
                     class="position-absolute top-0 start-100 translate-middle badge rounded-circle"
@@ -61,6 +63,8 @@
                     10
                     <span class="visually-hidden">unread messages</span>
                   </span>
+                  </a>
+                  
                 </li>
                 <li class="nav-item">
                   <a
@@ -85,7 +89,7 @@
       <div class="row">
         <footer class="col-12 bg-dark text-light">
           <div class="row p-4">
-            <div class="col-3">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
               <p class="header-link-home">COMPANY INFO</p>
               <p><a class="nav-link link link-home" href="home">About Us</a></p>
               <p>
@@ -96,7 +100,7 @@
               </p>
               <p><a class="nav-link link link-home" href="home">Shop</a></p>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
               <p class="header-link-home">HELP LINKS</p>
               <p>
                 <a class="nav-link link link-home" href="home"
@@ -110,7 +114,7 @@
               </p>
               <p><a class="nav-link link link-home" href="home">FAQ</a></p>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
               <p class="header-link-home">USEFUL LINKS</p>
               <p>
                 <a class="nav-link link link-home" href="home"
@@ -127,7 +131,7 @@
                 <a class="nav-link link link-home" href="home">Terms of Use</a>
               </p>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
               <p class="header-link-home">GET IN THE KNOW</p>
               <form class="d-flex" role="search">
                 <input
@@ -158,6 +162,7 @@
         </footer>
       </div>
     </div>
+
     <script src="resources/js/bootstrap.min.js"></script>
     <script src="resources/js/router.js"></script>
   </body>
