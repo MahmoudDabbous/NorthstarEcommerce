@@ -1,5 +1,5 @@
 let abs_path_pages =
-  window.location.origin + "/FinalProjectJavaScript/resources/pages/";
+  window.location.origin + "/ITI-Javascrit-Project/resources/pages/";
 
 const routes = {
   home: {
@@ -53,7 +53,7 @@ function loadContent() {
   let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
   let html = abs_path_pages + routes[route].namePage + ".html";
   console.log(html);
-  // Fetch the content of the corresponding HTML file 
+  // Fetch the content of the corresponding HTML file
   fetch(html)
     .then((response) => {
       if (!response.ok) {
