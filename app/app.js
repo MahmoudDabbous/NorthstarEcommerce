@@ -21,6 +21,14 @@ const routes = new Router({
     register: {
         linkLabel: "REGISTER",
         namePage: "register",
+    },
+    profile: {
+        linkLabel: "",
+        namePage: "profile",
+    },
+    itempage: {
+        linkLabel: "",
+        namePage: "itempage",
     }
 });
 
