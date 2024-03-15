@@ -8,5 +8,5 @@
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ public/index.html [L]
+    RewriteRule ^ index.html [L]
 </IfModule>
