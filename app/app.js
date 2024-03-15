@@ -1,5 +1,5 @@
-import './bootstrap.bundle.min.js';
-import Router from './router.js';
+import '../resources/js/bootstrap.bundle.min.js';
+import Router from '../src/router.js';
 
 const routes = new Router({
     home: {
@@ -18,10 +18,10 @@ const routes = new Router({
         linkLabel: "CONTACT",
         namePage: "contact",
     },
-  register: {
-    linkLabel: "REGISTER",
-    namePage: "register",
-  }
+    register: {
+        linkLabel: "REGISTER",
+        namePage: "register",
+    }
 });
 
 (function () {

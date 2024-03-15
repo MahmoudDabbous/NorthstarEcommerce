@@ -1,6 +1,6 @@
 export default class Router {
   constructor(routes) {
-    this.abs_path_pages = window.location.origin + "/ITI-Javascrit-Project/resources/pages/";
+    this.abs_path_pages = window.location.origin + "/ITI-Javascrit-Project/pages/";
     this.routes = routes;
     this.links = document.getElementById("links");
 
