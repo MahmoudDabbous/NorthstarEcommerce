@@ -3,6 +3,7 @@ export default class Router {
     this.abs_path_pages = window.location.origin + "/ITI-Javascrit-Project/pages/";
     this.routes = routes;
     this.links = document.getElementById("links");
+
   }
 
   loadRouter() {
