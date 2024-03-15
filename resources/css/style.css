@@ -65,4 +65,9 @@
 .bg-website {
   background-color: #024e82 !important;
 }
+
+.bg-c-lite-green {
+         
+         background: linear-gradient(to right, #024e82, #3a9ec0);
+    }
 /* css for common  */

@@ -21,6 +21,10 @@ const routes = {
   register: {
     linkLabel: "REGISTER",
     namePage: "register",
+  },
+  profile: {
+    linkLabel: "PROFILE",
+    namePage: "profile",
   }
 };
 
