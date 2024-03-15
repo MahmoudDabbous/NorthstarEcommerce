@@ -1,5 +1,5 @@
-import './bootstrap.bundle.min.js';
-import Router from './router.js';
+import '../resources/js/bootstrap.bundle.min.js';
+import Router from '../src/router.js';
 
 const routes = new Router({
     home: {
