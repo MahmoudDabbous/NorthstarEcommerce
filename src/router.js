@@ -3,41 +3,49 @@ export default class Router {
     this.abs_path_pages = window.location.origin + "/ITI-Javascrit-Project/pages/";
     this.routes = routes;
     this.links = document.getElementById("links");
-
   }
 
   loadRouter() {
-    Object.keys(this.routes).forEach((route) => {
-      const { linkLabel } = this.routes[route];
-
-      let str = `
-        <li class="nav-item">
-          <a class="nav-link link text-dark" aria-current="page" href="${route}">${linkLabel}</a>
-        </li>
+    Object.keys(this.routes).forEach(route => {
+      const { linkLabel, auth } = this.routes[route];
+      if (!auth) {
+        let str = `
+          <li class="nav-item">
+            <a class="nav-link link text-dark" aria-current="page" href="${route}">${linkLabel}</a>
+          </li>
         `;
-      this.links.insertAdjacentHTML("beforeend", str);
+        this.links.insertAdjacentHTML("beforeend", str);
+      }
     });
 
     this.links_a = document.querySelectorAll(".link");
-    
-    for (let i = 0; i < this.links_a.length; i++) {
-      this.links_a[i].addEventListener("click", (e) => {
+
+    this.links_a.forEach(link => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
         const { href } = e.target;
-        this.links_a.forEach((link) => {
+        this.links_a.forEach(link => {
           link.classList.remove("active");
         });
         e.target.classList.add("active");
         history.pushState({}, "", href);
         this.loadContent();
       });
-    }
+    });
+
     this.loadContent();
   }
 
   loadContent() {
-    let route = window.location.pathname.split("/")[2].toLocaleLowerCase();
+    let route = window.location.pathname.split("/")[2].toLowerCase();
+    const { auth, script } = this.routes[route] || {};
     let html = this.abs_path_pages + (route === "" ? "home" : this.routes[route].namePage) + ".html";
+
+    if (auth) {
+      window.location.href = "/ITI-Javascrit-Project/login";
+      return;
+    }
+
     fetch(html)
       .then((response) => {
         if (!response.ok) {
@@ -47,20 +55,35 @@ export default class Router {
       })
       .then((htmlRoutes) => {
         document.getElementById("app").innerHTML = htmlRoutes;
+        this.setActiveLink(route);
+        this.loadScript(script);
       })
       .catch((error) => {
         console.error("Error loading page:", error);
       });
+  }
 
+  setActiveLink(route) {
     let links_a = document.querySelectorAll(".link");
     if (route == "") {
       links_a[0].classList.add("active");
-    }
-    else
-      for (let i = 0; i < links_a.length; i++) {
-        if (route === links_a[i].getAttribute("href")) {
-          links_a[i].classList.add("active");
+    } else {
+      links_a.forEach(link => {
+        if (route === link.getAttribute("href")) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
         }
-      }
+      });
+    }
+  }
+
+  loadScript(script) {
+    if (script) {
+      let scriptTag = document.createElement("script");
+      scriptTag.src = script;
+      scriptTag.type = "module";
+      document.body.appendChild(scriptTag);
+    }
   }
 }
