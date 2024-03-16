@@ -1,6 +1,7 @@
 export default class Router {
   constructor(routes) {
     this.abs_path_pages = window.location.origin + "/ITI-Javascrit-Project/pages/";
+    this.abs_path_scripts = window.location.origin + "/ITI-Javascrit-Project/app/";
     this.routes = routes;
     this.links = document.getElementById("links");
   }
@@ -81,7 +82,7 @@ export default class Router {
   loadScript(script) {
     if (script) {
       let scriptTag = document.createElement("script");
-      scriptTag.src = script;
+      scriptTag.src = this.abs_path_scripts + script;
       scriptTag.type = "module";
       document.body.appendChild(scriptTag);
     }

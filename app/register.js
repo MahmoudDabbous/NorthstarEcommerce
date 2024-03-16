@@ -13,7 +13,7 @@ form.addEventListener("submit", (e) => {
     if (result) {
         window.location.href = "/ITI-Javascrit-Project/login";
     } else {
-        const error = document.getElementById("form-alert");
+        const error = document.getElementById("form-error");
         error.innerHTML = "User already exists";
         error.classList.remove("d-none");
     }
