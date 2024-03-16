@@ -1,15 +1,13 @@
 # Todos
 
-- Authentication (Login, Registration)
-- Cart
-- Wishlist
-- Authorization
-  - Cart and Wishlist
-- Forms in pages
+- Authentication (Login, Registration) - Dabbous
+- Cart - Torky
+- Wishlist - Torky
+- Forms in pages - Mansour and Fakhr
   - Contact form
   - Edit profile form
   - Checkout form
-- dynamic products display (we need dummy data)
+- dynamic products display (we need dummy data) - Galal
   - All
   - Single
   - Search

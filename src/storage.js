@@ -8,7 +8,7 @@ export default class Storage {
         localStorage.setItem(this.collection, JSON.stringify(this.data));
     }
 
-    static exists(key) {
+    exists(key) {
         const data = JSON.parse(localStorage.getItem(this.collection)) || {};
         return data.hasOwnProperty(key);
     }
@@ -34,17 +34,5 @@ export default class Storage {
             delete this.data[key];
             this.save();
         }
-    }
-
-    search(query) {
-        const results = [];
-        for (const key in this.data) {
-            if (this.data.hasOwnProperty(key)) {
-                if (key.includes(query)) {
-                    results.push(this.data[key]);
-                }
-            }
-        }
-        return results;
     }
 }
