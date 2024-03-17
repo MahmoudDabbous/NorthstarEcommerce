@@ -1,13 +1,15 @@
 export default class Router {
   constructor(routes) {
-    this.abs_path_pages = window.location.origin + "/ITI-Javascrit-Project/pages/";
-    this.abs_path_scripts = window.location.origin + "/ITI-Javascrit-Project/app/";
+    this.abs_path_pages =
+      window.location.origin + "/ITI-Javascrit-Project/pages/";
+    this.abs_path_scripts =
+      window.location.origin + "/ITI-Javascrit-Project/app/";
     this.routes = routes;
     this.links = document.getElementById("links");
   }
 
   loadRouter() {
-    Object.keys(this.routes).forEach(route => {
+    Object.keys(this.routes).forEach((route) => {
       const { linkLabel, auth } = this.routes[route];
       if (!auth) {
         let str = `
@@ -21,11 +23,11 @@ export default class Router {
 
     this.links_a = document.querySelectorAll(".link");
 
-    this.links_a.forEach(link => {
+    this.links_a.forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         const { href } = e.target;
-        this.links_a.forEach(link => {
+        this.links_a.forEach((link) => {
           link.classList.remove("active");
         });
         e.target.classList.add("active");
@@ -40,7 +42,10 @@ export default class Router {
   loadContent() {
     let route = window.location.pathname.split("/")[2].toLowerCase();
     const { auth, script } = this.routes[route] || {};
-    let html = this.abs_path_pages + (route === "" ? "home" : this.routes[route].namePage) + ".html";
+    let html =
+      this.abs_path_pages +
+      (route === "" ? "home" : this.routes[route].namePage) +
+      ".html";
 
     if (auth) {
       window.location.href = "/ITI-Javascrit-Project/login";
@@ -68,10 +73,12 @@ export default class Router {
     let links_a = document.querySelectorAll(".link");
     if (route == "") {
       links_a[0].classList.add("active");
+      this.loadScript("home");
     } else {
-      links_a.forEach(link => {
+      links_a.forEach((link) => {
         if (route === link.getAttribute("href")) {
           link.classList.add("active");
+          this.loadScript(route);
         } else {
           link.classList.remove("active");
         }
@@ -82,7 +89,7 @@ export default class Router {
   loadScript(script) {
     if (script) {
       let scriptTag = document.createElement("script");
-      scriptTag.src = this.abs_path_scripts + script;
+      scriptTag.src = this.abs_path_scripts + script + ".js";
       scriptTag.type = "module";
       document.body.appendChild(scriptTag);
     }

@@ -5,6 +5,7 @@ const routes = new Router({
     home: {
         linkLabel: "HOME",
         namePage: "home",
+        script:"home"
     },
     about: {
         linkLabel: "ABOUT",
