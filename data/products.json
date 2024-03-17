@@ -1,201 +1,422 @@
 {
     "product_id_1": {
-        "name": "Smartphone",
-        "price": 500,
-        "category": "Electronics",
-        "description": "High-performance smartphone with the latest features.",
-        "image": "smartphone.jpg",
-        "rating": 4.5,
-        "comments": [
-            {
-                "user": "user1@example.com",
-                "comment": "Great phone, highly recommend!",
-                "rating": 5
-            },
-            {
-                "user": "user2@example.com",
-                "comment": "Fast delivery, satisfied with the purchase.",
-                "rating": 4
-            }
-        ],
-        "quantity": 50
-    },
-    "product_id_2": {
-        "name": "Laptop",
-        "price": 1000,
-        "category": "Electronics",
-        "description": "Powerful laptop for work and entertainment.",
-        "image": "laptop.jpg",
-        "rating": 4.8,
-        "comments": [],
-        "quantity": 30
-    },
-    "product_id_3": {
-        "name": "Headphones",
-        "price": 150,
-        "category": "Electronics",
-        "description": "Wireless headphones with noise-cancelling technology.",
-        "image": "headphones.jpg",
+        "name": "Men's Casual Shirt",
+        "price": 35,
+        "category": "Men's Clothing",
+        "description": "Comfortable and stylish casual shirt for men.",
+        "image": "casual_shirt.jpg",
         "rating": 4.2,
         "comments": [
             {
-                "user": "user3@example.com",
-                "comment": "Comfortable to wear and great sound quality.",
+                "user": "user1@example.com",
+                "comment": "Nice fit, good quality material.",
                 "rating": 4
+            },
+            {
+                "user": "user2@example.com",
+                "comment": "Color is slightly different from the picture but still nice.",
+                "rating": 3.5
             }
         ],
-        "quantity": 80
+        "quantity": 30
     },
-    "product_id_4": {
-        "name": "Smartwatch",
-        "price": 200,
-        "category": "Electronics",
-        "description": "Fitness tracker with heart rate monitoring and GPS.",
-        "image": "smartwatch.jpg",
+    "product_id_2": {
+        "name": "Women's Denim Jeans",
+        "price": 45,
+        "category": "Women's Clothing",
+        "description": "Classic denim jeans for women, perfect for any occasion.",
+        "image": "denim_jeans.jpg",
         "rating": 4.6,
         "comments": [
             {
-                "user": "user4@example.com",
-                "comment": "Love the design and functionality.",
+                "user": "user3@example.com",
+                "comment": "Love the fit, very comfortable to wear.",
                 "rating": 5
+            },
+            {
+                "user": "user4@example.com",
+                "comment": "Quality is top-notch, worth the price.",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 25
+    },
+    "product_id_3": {
+        "name": "Men's Leather Jacket",
+        "price": 120,
+        "category": "Men's Clothing",
+        "description": "Stylish leather jacket for men, perfect for cold weather.",
+        "image": "leather_jacket.jpg",
+        "rating": 4.8,
+        "comments": [
+            {
+                "user": "user5@example.com",
+                "comment": "Looks even better in person, very impressed.",
+                "rating": 5
+            },
+            {
+                "user": "user6@example.com",
+                "comment": "Fits perfectly, great quality leather.",
+                "rating": 5
+            }
+        ],
+        "quantity": 15
+    },
+    "product_id_4": {
+        "name": "Women's Floral Dress",
+        "price": 55,
+        "category": "Women's Clothing",
+        "description": "Elegant floral dress for women, ideal for special occasions.",
+        "image": "floral_dress.jpg",
+        "rating": 4.4,
+        "comments": [
+            {
+                "user": "user7@example.com",
+                "comment": "Beautiful design, received many compliments.",
+                "rating": 4.5
+            },
+            {
+                "user": "user8@example.com",
+                "comment": "Fits well and very comfortable to wear.",
+                "rating": 4
+            }
+        ],
+        "quantity": 20
+    },
+    "product_id_5": {
+        "name": "Men's Running Shoes",
+        "price": 80,
+        "category": "Men's Shoes",
+        "description": "High-performance running shoes for men, designed for comfort and support.",
+        "image": "running_shoes.jpg",
+        "rating": 4.7,
+        "comments": [
+            {
+                "user": "user9@example.com",
+                "comment": "Great for long runs, very comfortable and durable.",
+                "rating": 5
+            },
+            {
+                "user": "user10@example.com",
+                "comment": "Love the style and fit, highly recommend!",
+                "rating": 4.5
             }
         ],
         "quantity": 40
     },
-    "product_id_5": {
-        "name": "Wireless Speaker",
-        "price": 80,
-        "category": "Electronics",
-        "description": "Portable speaker with Bluetooth connectivity.",
-        "image": "speaker.jpg",
-        "rating": 4.3,
-        "comments": [],
-        "quantity": 60
-    },
     "product_id_6": {
-        "name": "Coffee Maker",
+        "name": "Women's High-Waisted Jeans",
         "price": 50,
-        "category": "Kitchen Appliances",
-        "description": "Automatic coffee maker for brewing delicious coffee at home.",
-        "image": "coffeemaker.jpg",
-        "rating": 4.0,
-        "comments": [],
-        "quantity": 25
-    },
-    "product_id_7": {
-        "name": "Air Fryer",
-        "price": 120,
-        "category": "Kitchen Appliances",
-        "description": "Healthy cooking with less oil using an air fryer.",
-        "image": "airfryer.jpg",
-        "rating": 4.7,
+        "category": "Women's Clothing",
+        "description": "Trendy high-waisted jeans for women, perfect for casual wear.",
+        "image": "high_waisted_jeans.jpg",
+        "rating": 4.3,
         "comments": [
             {
-                "user": "user5@example.com",
-                "comment": "Makes cooking so much easier, highly recommended.",
-                "rating": 5
+                "user": "user11@example.com",
+                "comment": "Nice fit and very flattering.",
+                "rating": 4
+            },
+            {
+                "user": "user12@example.com",
+                "comment": "Comfortable to wear all day.",
+                "rating": 4.5
             }
         ],
         "quantity": 35
     },
+    "product_id_7": {
+        "name": "Men's Hooded Sweatshirt",
+        "price": 40,
+        "category": "Men's Clothing",
+        "description": "Classic hooded sweatshirt for men, perfect for casual outings.",
+        "image": "hooded_sweatshirt.jpg",
+        "rating": 4.1,
+        "comments": [
+            {
+                "user": "user13@example.com",
+                "comment": "Soft and cozy, great for chilly evenings.",
+                "rating": 4
+            },
+            {
+                "user": "user14@example.com",
+                "comment": "Nice quality, fits true to size.",
+                "rating": 4
+            }
+        ],
+        "quantity": 25
+    },
     "product_id_8": {
-        "name": "Blender",
+        "name": "Women's Knit Sweater",
         "price": 60,
-        "category": "Kitchen Appliances",
-        "description": "Versatile blender for making smoothies, soups, and sauces.",
-        "image": "blender.jpg",
-        "rating": 3.8,
-        "comments": [],
-        "quantity": 45
+        "category": "Women's Clothing",
+        "description": "Warm and stylish knit sweater for women, perfect for fall and winter.",
+        "image": "knit_sweater.jpg",
+        "rating": 4.6,
+        "comments": [
+            {
+                "user": "user15@example.com",
+                "comment": "Love the color and fit, very cozy.",
+                "rating": 5
+            },
+            {
+                "user": "user16@example.com",
+                "comment": "High-quality material, feels luxurious.",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 30
     },
     "product_id_9": {
-        "name": "Vacuum Cleaner",
-        "price": 150,
-        "category": "Home Appliances",
-        "description": "Powerful vacuum cleaner for efficient cleaning.",
-        "image": "vacuumcleaner.jpg",
-        "rating": 4.4,
-        "comments": [],
-        "quantity": 20
+        "name": "Men's Formal Suit",
+        "price": 200,
+        "category": "Men's Clothing",
+        "description": "Elegant formal suit for men, perfect for weddings and special events.",
+        "image": "formal_suit.jpg",
+        "rating": 4.9,
+        "comments": [
+            {
+                "user": "user17@example.com",
+                "comment": "Very impressed with the fit and quality.",
+                "rating": 5
+            },
+            {
+                "user": "user18@example.com",
+                "comment": "Received many compliments, highly recommend!",
+                "rating": 5
+            }
+        ],
+        "quantity": 10
     },
     "product_id_10": {
-        "name": "Air Purifier",
-        "price": 200,
-        "category": "Home Appliances",
-        "description": "Air purifier for removing allergens and pollutants from the air.",
-        "image": "airpurifier.jpg",
-        "rating": 4.9,
-        "comments": [],
-        "quantity": 15
+        "name": "Women's Leather Jacket",
+        "price": 150,
+        "category": "Women's Clothing",
+        "description": "Fashionable leather jacket for women, adds edge to any outfit.",
+        "image": "leather_jacket_women.jpg",
+        "rating": 4.7,
+        "comments": [
+            {
+                "user": "user19@example.com",
+                "comment": "Great fit and quality, love the style.",
+                "rating": 4.5
+            },
+            {
+                "user": "user20@example.com",
+                "comment": "Very stylish, received many compliments.",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 20
     },
     "product_id_11": {
-        "name": "Electric Toothbrush",
-        "price": 30,
-        "category": "Personal Care",
-        "description": "Electric toothbrush for effective oral hygiene.",
-        "image": "toothbrush.jpg",
+        "name": "Men's Cargo Shorts",
+        "price": 25,
+        "category": "Men's Clothing",
+        "description": "Comfortable cargo shorts for men, perfect for outdoor activities.",
+        "image": "cargo_shorts.jpg",
         "rating": 4.2,
-        "comments": [],
-        "quantity": 55
+        "comments": [
+            {
+                "user": "user21@example.com",
+                "comment": "Lots of pockets, very convenient.",
+                "rating": 4
+            },
+            {
+                "user": "user22@example.com",
+                "comment": "Lightweight and comfortable to wear.",
+                "rating": 4
+            }
+        ],
+        "quantity": 30
     },
     "product_id_12": {
-        "name": "Hair Dryer",
-        "price": 40,
-        "category": "Personal Care",
-        "description": "Hair dryer for quick and efficient hair drying.",
-        "image": "hairdryer.jpg",
-        "rating": 3.5,
-        "comments": [],
-        "quantity": 70
+        "name": "Women's Ankle Boots",
+        "price": 70,
+        "category": "Women's Shoes",
+        "description": "Stylish ankle boots for women, perfect for any season.",
+        "image": "ankle_boots.jpg",
+        "rating": 4.5,
+        "comments": [
+            {
+                "user": "user23@example.com",
+                "comment": "Love the design and comfort, great for everyday wear.",
+                "rating": 5
+            },
+            {
+                "user": "user24@example.com",
+                "comment": "High-quality material, fits true to size.",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 25
     },
     "product_id_13": {
-        "name": "Shaving Kit",
-        "price": 25,
-        "category": "Personal Care",
-        "description": "Complete shaving kit for a smooth and comfortable shave.",
-        "image": "shavingkit.jpg",
-        "rating": 4.0,
-        "comments": [],
+        "name": "Men's Graphic T-Shirt",
+        "price": 20,
+        "category": "Men's Clothing",
+        "description": "Cool graphic t-shirt for men, adds a pop of style to any outfit.",
+        "image": "graphic_tshirt.jpg",
+        "rating": 4.3,
+        "comments": [
+            {
+                "user": "user25@example.com",
+                "comment": "Unique design, love the colors.",
+                "rating": 4
+            },
+            {
+                "user": "user26@example.com",
+                "comment": "Comfortable to wear, great for casual occasions.",
+                "rating": 4.5
+            }
+        ],
         "quantity": 40
     },
     "product_id_14": {
-        "name": "Backpack",
-        "price": 50,
-        "category": "Travel Accessories",
-        "description": "Durable backpack for outdoor adventures and travel.",
-        "image": "backpack.jpg",
-        "rating": 4.6,
-        "comments": [],
-        "quantity": 30
+        "name": "Women's Summer Dress",
+        "price": 30,
+        "category": "Women's Clothing",
+        "description": "Light and breezy summer dress for women, perfect for hot days.",
+        "image": "summer_dress.jpg",
+        "rating": 4.1,
+        "comments": [
+            {
+                "user": "user27@example.com",
+                "comment": "Very comfortable and cute design.",
+                "rating": 4
+            },
+            {
+                "user": "user28@example.com",
+                "comment": "Received many compliments, love it!",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 35
     },
     "product_id_15": {
-        "name": "Travel Pillow",
-        "price": 20,
-        "category": "Travel Accessories",
-        "description": "Compact travel pillow for comfortable rest during long journeys.",
-        "image": "travelpillow.jpg",
-        "rating": 4.3,
-        "comments": [],
-        "quantity": 65
+        "name": "Men's Polo Shirt",
+        "price": 25,
+        "category": "Men's Clothing",
+        "description": "Classic polo shirt for men, perfect for casual wear.",
+        "image": "polo_shirt.jpg",
+        "rating": 4.4,
+        "comments": [
+            {
+                "user": "user29@example.com",
+                "comment": "Nice fit and comfortable material.",
+                "rating": 4
+            },
+            {
+                "user": "user30@example.com",
+                "comment": "Great for everyday wear, highly recommend!",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 30
     },
     "product_id_16": {
-        "name": "Luggage Set",
-        "price": 150,
-        "category": "Travel Accessories",
-        "description": "Stylish luggage set with ample storage space for all your travel essentials.",
-        "image": "luggageset.jpg",
-        "rating": 4.8,
-        "comments": [],
+        "name": "Women's Cardigan",
+        "price": 35,
+        "category": "Women's Clothing",
+        "description": "Versatile cardigan for women, perfect for layering.",
+        "image": "cardigan.jpg",
+        "rating": 4.6,
+        "comments": [
+            {
+                "user": "user31@example.com",
+                "comment": "Love the fit and color, goes with everything.",
+                "rating": 5
+            },
+            {
+                "user": "user32@example.com",
+                "comment": "Soft and comfortable material, perfect for chilly days.",
+                "rating": 4.5
+            }
+        ],
         "quantity": 20
     },
     "product_id_17": {
-        "name": "Yoga Mat",
+        "name": "Men's Leather Belt",
         "price": 30,
-        "category": "Fitness & Sports",
-        "description": "High-quality yoga mat for comfortable yoga and exercise sessions.",
-        "image": "yogamat.jpg",
+        "category": "Men's Accessories",
+        "description": "Classic leather belt for men, adds a finishing touch to any outfit.",
+        "image": "leather_belt.jpg",
+        "rating": 4.3,
+        "comments": [
+            {
+                "user": "user33@example.com",
+                "comment": "Great quality, looks stylish.",
+                "rating": 4
+            },
+            {
+                "user": "user34@example.com",
+                "comment": "Fits perfectly, durable material.",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 40
+    },
+    "product_id_18": {
+        "name": "Women's Scarf",
+        "price": 20,
+        "category": "Women's Accessories",
+        "description": "Fashionable scarf for women, adds a pop of color to any outfit.",
+        "image": "scarf.jpg",
+        "rating": 4.2,
+        "comments": [
+            {
+                "user": "user35@example.com",
+                "comment": "Love the design and material, very soft.",
+                "rating": 4
+            },
+            {
+                "user": "user36@example.com",
+                "comment": "Received many compliments, great purchase.",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 50
+    },
+    "product_id_19": {
+        "name": "Men's Watch",
+        "price": 60,
+        "category": "Men's Accessories",
+        "description": "Stylish watch for men, adds a touch of sophistication to any look.",
+        "image": "watch.jpg",
         "rating": 4.5,
-        "comments": [],
-        "quantity": 20
+        "comments": [
+            {
+                "user": "user37@example.com",
+                "comment": "Sleek design, keeps accurate time.",
+                "rating": 4
+            },
+            {
+                "user": "user38@example.com",
+                "comment": "Great value for the price, very satisfied.",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 30
+    },
+    "product_id_20": {
+        "name": "Women's Sunglasses",
+        "price": 60,
+        "category": "Men's Accessories",
+        "description": "Stylish watch for men, adds a touch of sophistication to any look.",
+        "image": "watch.jpg",
+        "rating": 4.5,
+        "comments": [
+            {
+                "user": "user37@example.com",
+                "comment": "Sleek design, keeps accurate time.",
+                "rating": 4
+            },
+            {
+                "user": "user38@example.com",
+                "comment": "Great value for the price, very satisfied.",
+                "rating": 4.5
+            }
+        ],
+        "quantity": 30
     }
 }

@@ -1,3 +1,13 @@
+body {
+  font-family: "Arimo", Arial, sans-serif;
+}
+@font-face {
+  font-family: Arimo;
+  src: url("../fonts/Arimo/static/Arimo-Regular.ttf");
+}
+a,li{
+  font-size: 1rem;
+}
 
 /* css for contact page */
 .contact-bg {
@@ -108,9 +118,8 @@
 }
 
 .bg-c-lite-green {
-         
-         background: linear-gradient(to right, #024e82, #3a9ec0);
-    }
+  background: linear-gradient(to right, #024e82, #3a9ec0);
+}
 /* css for common  */
 
 .header-container-about {
@@ -182,4 +191,3 @@
     margin-top: 100px;
   }
 }
-

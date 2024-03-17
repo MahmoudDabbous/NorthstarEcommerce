@@ -10,9 +10,7 @@ export default class Product {
     image,
     rating,
     comments,
-    quantity,
-    inCartOf,
-    inWishListOf
+    quantity
   ) {
     this.id = id;
     this.name = name;
@@ -23,8 +21,6 @@ export default class Product {
     this.rating = rating;
     this.comments = comments;
     this.quantity = quantity;
-    this.inCartOf = inCartOf;
-    this.inWishListOf = inWishListOf;
   }
 
   // Method to add a comment to the product
@@ -43,36 +39,6 @@ export default class Product {
       this.quantity -= amount;
     } else {
       console.log("Error: Quantity cannot be decreased below 0.");
-    }
-  }
-
-  // Method to add the product to the cart of a user
-  addToCart(user) {
-    if (!this.inCartOf.includes(user)) {
-      this.inCartOf.push(user);
-    }
-  }
-
-  // Method to remove the product from the cart of a user
-  removeFromCart(user) {
-    const index = this.inCartOf.indexOf(user);
-    if (index !== -1) {
-      this.inCartOf.splice(index, 1);
-    }
-  }
-
-  // Method to add the product to the wish list of a user
-  addToWishList(user) {
-    if (!this.inWishListOf.includes(user)) {
-      this.inWishListOf.push(user);
-    }
-  }
-
-  // Method to remove the product from the wish list of a user
-  removeFromWishList(user) {
-    const index = this.inWishListOf.indexOf(user);
-    if (index !== -1) {
-      this.inWishListOf.splice(index, 1);
     }
   }
 
