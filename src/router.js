@@ -7,7 +7,7 @@ export default class Router {
   }
 
   loadRouter() {
-    Object.keys(this.routes).forEach(route => {
+    Object.keys(this.routes).forEach((route) => {
       const { linkLabel, auth } = this.routes[route];
       if (!auth) {
         let str = `
@@ -21,7 +21,7 @@ export default class Router {
 
     this.links_a = document.querySelectorAll(".link");
 
-    this.links_a.forEach(link => {
+    this.links_a.forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         const { href } = e.target;
@@ -40,11 +40,14 @@ export default class Router {
   loadContent() {
     let route = window.location.pathname.split("/")[2].toLowerCase();
     const { auth, script } = this.routes[route] || {};
-    let html = this.abs_path_pages + (route === "" ? "home" : this.routes[route].namePage) + ".html";
+    let html =
+      this.abs_path_pages +
+      (route === "" ? "home" : this.routes[route].namePage) +
+      ".html";
 
     if (auth) {
       window.location.href = "/ITI-Javascrit-Project/login";
-      return;
+      return; // Stop further execution
     }
 
     fetch(html)
@@ -68,10 +71,12 @@ export default class Router {
     let links_a = document.querySelectorAll(".link");
     if (route == "") {
       links_a[0].classList.add("active");
+      this.loadScript("home");
     } else {
-      links_a.forEach(link => {
+      links_a.forEach((link) => {
         if (route === link.getAttribute("href")) {
           link.classList.add("active");
+          this.loadScript(route);
         } else {
           link.classList.remove("active");
         }

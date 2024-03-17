@@ -1,0 +1,201 @@
+{
+    "product_id_1": {
+        "name": "Smartphone",
+        "price": 500,
+        "category": "Electronics",
+        "description": "High-performance smartphone with the latest features.",
+        "image": "smartphone.jpg",
+        "rating": 4.5,
+        "comments": [
+            {
+                "user": "user1@example.com",
+                "comment": "Great phone, highly recommend!",
+                "rating": 5
+            },
+            {
+                "user": "user2@example.com",
+                "comment": "Fast delivery, satisfied with the purchase.",
+                "rating": 4
+            }
+        ],
+        "quantity": 50
+    },
+    "product_id_2": {
+        "name": "Laptop",
+        "price": 1000,
+        "category": "Electronics",
+        "description": "Powerful laptop for work and entertainment.",
+        "image": "laptop.jpg",
+        "rating": 4.8,
+        "comments": [],
+        "quantity": 30
+    },
+    "product_id_3": {
+        "name": "Headphones",
+        "price": 150,
+        "category": "Electronics",
+        "description": "Wireless headphones with noise-cancelling technology.",
+        "image": "headphones.jpg",
+        "rating": 4.2,
+        "comments": [
+            {
+                "user": "user3@example.com",
+                "comment": "Comfortable to wear and great sound quality.",
+                "rating": 4
+            }
+        ],
+        "quantity": 80
+    },
+    "product_id_4": {
+        "name": "Smartwatch",
+        "price": 200,
+        "category": "Electronics",
+        "description": "Fitness tracker with heart rate monitoring and GPS.",
+        "image": "smartwatch.jpg",
+        "rating": 4.6,
+        "comments": [
+            {
+                "user": "user4@example.com",
+                "comment": "Love the design and functionality.",
+                "rating": 5
+            }
+        ],
+        "quantity": 40
+    },
+    "product_id_5": {
+        "name": "Wireless Speaker",
+        "price": 80,
+        "category": "Electronics",
+        "description": "Portable speaker with Bluetooth connectivity.",
+        "image": "speaker.jpg",
+        "rating": 4.3,
+        "comments": [],
+        "quantity": 60
+    },
+    "product_id_6": {
+        "name": "Coffee Maker",
+        "price": 50,
+        "category": "Kitchen Appliances",
+        "description": "Automatic coffee maker for brewing delicious coffee at home.",
+        "image": "coffeemaker.jpg",
+        "rating": 4.0,
+        "comments": [],
+        "quantity": 25
+    },
+    "product_id_7": {
+        "name": "Air Fryer",
+        "price": 120,
+        "category": "Kitchen Appliances",
+        "description": "Healthy cooking with less oil using an air fryer.",
+        "image": "airfryer.jpg",
+        "rating": 4.7,
+        "comments": [
+            {
+                "user": "user5@example.com",
+                "comment": "Makes cooking so much easier, highly recommended.",
+                "rating": 5
+            }
+        ],
+        "quantity": 35
+    },
+    "product_id_8": {
+        "name": "Blender",
+        "price": 60,
+        "category": "Kitchen Appliances",
+        "description": "Versatile blender for making smoothies, soups, and sauces.",
+        "image": "blender.jpg",
+        "rating": 3.8,
+        "comments": [],
+        "quantity": 45
+    },
+    "product_id_9": {
+        "name": "Vacuum Cleaner",
+        "price": 150,
+        "category": "Home Appliances",
+        "description": "Powerful vacuum cleaner for efficient cleaning.",
+        "image": "vacuumcleaner.jpg",
+        "rating": 4.4,
+        "comments": [],
+        "quantity": 20
+    },
+    "product_id_10": {
+        "name": "Air Purifier",
+        "price": 200,
+        "category": "Home Appliances",
+        "description": "Air purifier for removing allergens and pollutants from the air.",
+        "image": "airpurifier.jpg",
+        "rating": 4.9,
+        "comments": [],
+        "quantity": 15
+    },
+    "product_id_11": {
+        "name": "Electric Toothbrush",
+        "price": 30,
+        "category": "Personal Care",
+        "description": "Electric toothbrush for effective oral hygiene.",
+        "image": "toothbrush.jpg",
+        "rating": 4.2,
+        "comments": [],
+        "quantity": 55
+    },
+    "product_id_12": {
+        "name": "Hair Dryer",
+        "price": 40,
+        "category": "Personal Care",
+        "description": "Hair dryer for quick and efficient hair drying.",
+        "image": "hairdryer.jpg",
+        "rating": 3.5,
+        "comments": [],
+        "quantity": 70
+    },
+    "product_id_13": {
+        "name": "Shaving Kit",
+        "price": 25,
+        "category": "Personal Care",
+        "description": "Complete shaving kit for a smooth and comfortable shave.",
+        "image": "shavingkit.jpg",
+        "rating": 4.0,
+        "comments": [],
+        "quantity": 40
+    },
+    "product_id_14": {
+        "name": "Backpack",
+        "price": 50,
+        "category": "Travel Accessories",
+        "description": "Durable backpack for outdoor adventures and travel.",
+        "image": "backpack.jpg",
+        "rating": 4.6,
+        "comments": [],
+        "quantity": 30
+    },
+    "product_id_15": {
+        "name": "Travel Pillow",
+        "price": 20,
+        "category": "Travel Accessories",
+        "description": "Compact travel pillow for comfortable rest during long journeys.",
+        "image": "travelpillow.jpg",
+        "rating": 4.3,
+        "comments": [],
+        "quantity": 65
+    },
+    "product_id_16": {
+        "name": "Luggage Set",
+        "price": 150,
+        "category": "Travel Accessories",
+        "description": "Stylish luggage set with ample storage space for all your travel essentials.",
+        "image": "luggageset.jpg",
+        "rating": 4.8,
+        "comments": [],
+        "quantity": 20
+    },
+    "product_id_17": {
+        "name": "Yoga Mat",
+        "price": 30,
+        "category": "Fitness & Sports",
+        "description": "High-quality yoga mat for comfortable yoga and exercise sessions.",
+        "image": "yogamat.jpg",
+        "rating": 4.5,
+        "comments": [],
+        "quantity": 20
+    }
+}
