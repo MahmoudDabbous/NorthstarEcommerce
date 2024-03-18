@@ -17,6 +17,11 @@ export default class User {
     storage.update(this.email, this);
   }
 
+  readCart() {
+    
+    return this.cart;
+  }
+  
   addToCart(productId) {
     this.cart.push(productId);
     this.save();
