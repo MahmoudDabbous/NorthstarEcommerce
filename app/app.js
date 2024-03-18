@@ -46,6 +46,12 @@ const routes = new Router({
     auth: !Authenticator.isLoggedIn(),
     script: "logout",
   },
+  editProfile: {
+    linkLabel: "editProfile",
+    namePage: "editProfile",
+
+    auth: !Authenticator.isLoggedIn(),
+  },
 });
 
 (function () {
