@@ -46,9 +46,9 @@ const routes = new Router({
     auth: !Authenticator.isLoggedIn(),
     script: "logout",
   },
-  editProfile: {
-    linkLabel: "editProfile",
-    namePage: "editProfile",
+  "edit-profile": {
+    linkLabel: "edit-profile",
+    namePage: "edit-profile",
 
     auth: !Authenticator.isLoggedIn(),
   },
