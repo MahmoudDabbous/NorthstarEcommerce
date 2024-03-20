@@ -67,6 +67,7 @@ export default class Router {
       .then((htmlRoutes) => {
         document.getElementById("app").innerHTML = htmlRoutes;
         this.setActiveLink(route);
+
         this.loadScript(script);
       })
       .catch((error) => {

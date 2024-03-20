@@ -31,9 +31,10 @@ const routes = new Router({
     script: "register",
   },
   profile: {
-    linkLabel: "",
+    linkLabel: "PROFILE",
     namePage: "profile",
     auth: !Authenticator.isLoggedIn(),
+    script: "profile",
   },
   itempage: {
     linkLabel: "",
@@ -53,7 +54,20 @@ const routes = new Router({
     script: "addCart",
     
   },
-  
+  "edit-profile": {
+    linkLabel: "EDIT PROFILE",
+    namePage: "edit-profile",
+
+    auth: !Authenticator.isLoggedIn(),
+    script: "edit-profile",
+  },
+  checkout: {
+    linkLabel: "CHECKOUT",
+    namePage: "checkout",
+
+    auth: !Authenticator.isLoggedIn(),
+    script: "checkout",
+  },
 });
 
 (function () {
@@ -68,15 +82,3 @@ const routes = new Router({
     });
   }
 })();
-
-/**
- *
- *  {
- *   "eksd@rfmds.com": {
- *      "password": "123456",
- *      "name": "Ahmed",
- *      "cart":[{}...],
- *      "wishlist":[{}...],
- *  }
- * }
- */
