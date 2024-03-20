@@ -29,10 +29,20 @@ export default class Storage {
     }
   }
 
+  count()
+  {
+    return Object.keys(this.data).length;
+  }
+
   delete(key) {
     if (this.data.hasOwnProperty(key)) {
       delete this.data[key];
       this.save();
     }
+  }
+
+  products()
+  {
+    return this.data;
   }
 }

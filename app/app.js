@@ -46,6 +46,14 @@ const routes = new Router({
     auth: !Authenticator.isLoggedIn(),
     script: "logout",
   },
+  cart: {
+    linkLabel: "",
+    namePage: "cart",
+    auth: !Authenticator.isLoggedIn(),
+    script: "addCart",
+    
+  },
+  
 });
 
 (function () {

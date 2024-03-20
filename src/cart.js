@@ -19,7 +19,7 @@ export default class Cart {
             const user=new User(Authenticator.currentUser());
              
             user.addToCart(productId);
-            console.log(user.readCart());
+           
             storage.create(productId,data);
             return true;
          }
@@ -28,29 +28,13 @@ export default class Cart {
     }
     
 
-    
-    exists(productId)
-    {
-        if(Authenticator.isLoggedIn())
-        {
-           const user=new User(Authenticator.currentUser());
-           productsId=user.readCart();
-            if(productsId.includes(productId)){
-                return true;
-            }
-            
-            return false;
-        }
-            
-    }
 
     removeFromCart(productId)
     {
         const storage=new Storage(this.collection);
 
-        if(Authenticator.isLoggedIn() & !this.exists(productId))
+        if(Authenticator.isLoggedIn())
         {
-            
            const user=new User(Authenticator.currentUser());
            user.removeFromCart(productId);
            storage.delete(productId);
@@ -61,7 +45,62 @@ export default class Cart {
     }
 
 
+    udate(productId,data){
 
+        const storage=new Storage(this.collection);
+
+         if(Authenticator.isLoggedIn())
+         {
+            storage.update(productId,data);
+            return true;
+         }
+
+         return false
+
+    }
+
+    count()
+    {
+        const storage=new Storage(this.collection);
+
+        if(Authenticator.isLoggedIn())
+        {
+            
+           return storage.count();
+           
+        }
+
+        return false;
+    }
+
+
+    allProducts()
+    {
+        const storage=new Storage(this.collection);
+
+        if(Authenticator.isLoggedIn())
+        {
+            
+           return storage.products();
+           
+        }
+
+        return false;
+    }
+
+
+    productIds()
+    {
+        if(Authenticator.isLoggedIn())
+        {
+            
+            const user=new User(Authenticator.currentUser());
+           return user.readCart();
+           
+        }
+
+        return false;
+    }
 }
 
   
