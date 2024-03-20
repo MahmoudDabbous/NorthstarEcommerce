@@ -20,20 +20,9 @@ export default class User {
     storage.update(this.email, this);
   }
 
-
   addToCart(productId) {
-    const index = this.cart.indexOf(productId);
-    if (index === -1) {
     this.cart.push(productId);
     this.save();
-    }
-
-  
-  }
-
-  readCart()
-  {
-    return this.cart;
   }
 
   removeFromCart(productId) {
@@ -68,6 +57,5 @@ export default class User {
         session.create("loggedInUser", data.email);
       }
     }
-    console.log(data);
   }
 }
