@@ -34,7 +34,7 @@ export default class Router {
         });
         e.target.classList.add("active");
         history.pushState({}, "", href);
-        window.location.href =  link;
+        window.location.href = link;
       });
     });
 
@@ -75,7 +75,9 @@ export default class Router {
   }
 
   setActiveLink(route) {
+    debugger;
     let links_a = document.querySelectorAll(".link");
+    const { script } = this.routes[route] || {};
     if (route == "") {
       links_a[0].classList.add("active");
       this.loadScript("home");
@@ -83,6 +85,7 @@ export default class Router {
       links_a.forEach((link) => {
         if (route === link.getAttribute("href")) {
           link.classList.add("active");
+          if (script) this.loadScript(script);
         } else {
           link.classList.remove("active");
         }
