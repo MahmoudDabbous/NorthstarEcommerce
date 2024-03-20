@@ -32,7 +32,7 @@ const routes = new Router({
     script: "register",
   },
   profile: {
-    linkLabel: "PROFILE",
+    linkLabel: "",
     namePage: "profile",
     auth: !Authenticator.isLoggedIn(),
     script: "profile",
@@ -49,20 +49,20 @@ const routes = new Router({
     script: "logout",
   },
   cart: {
-    linkLabel: "",
+    linkLabel: "CART",
     namePage: "cart",
     auth: !Authenticator.isLoggedIn(),
     script: "addCart",
   },
   "edit-profile": {
-    linkLabel: "EDIT PROFILE",
+    linkLabel: "",
     namePage: "edit-profile",
 
     auth: !Authenticator.isLoggedIn(),
     script: "edit-profile",
   },
   checkout: {
-    linkLabel: "CHECKOUT",
+    linkLabel: "",
     namePage: "checkout",
 
     auth: !Authenticator.isLoggedIn(),
