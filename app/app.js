@@ -23,7 +23,11 @@ const routes = new Router({
     linkLabel: "CONTACT",
     namePage: "contact",
     auth: false,
+<<<<<<< Updated upstream
     scipt: "contact",
+=======
+    script: "contact",
+>>>>>>> Stashed changes
   },
   register: {
     linkLabel: "REGISTER",
