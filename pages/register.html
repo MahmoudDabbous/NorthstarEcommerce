@@ -1,68 +1,167 @@
 <section id="register" class="bg-light p-5 p-md-5 p-sm-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-11">
-          <div class="card border-light-subtle shadow-sm">
-            <div class="row">
-              <div class="col-12 col-md-6">
-                <img class="img-fluid w-100 h-100" loading="lazy" src="resources/images/men/register.webp" alt="Welcome back you've been missed!">
-              </div>
-              <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-                <div class="col-12 col-lg-11 col-xl-10">
-                  <div class="card-body p-1 p-md-1 p-xl-5">
-                    <div class="row">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-11">
+        <div class="card border-light-subtle shadow-sm">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <img
+                class="img-fluid w-100 h-100"
+                loading="lazy"
+                src="resources/images/men/register.webp"
+                alt="Welcome back you've been missed!"
+              />
+            </div>
+            <div
+              class="col-12 col-md-6 d-flex align-items-center justify-content-center"
+            >
+              <div class="col-12 col-lg-11 col-xl-10">
+                <div class="card-body p-1 p-md-1 p-xl-5">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-5">
+                        <h2 class="h4 text-center">Registration</h2>
+                        <div
+                          class="d-none alert alert-danger"
+                          id="form-error"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <form action="#!">
+                    <div class="row gy-3 overflow-hidden">
                       <div class="col-12">
-                        <div class="mb-5">
-                          <h2 class="h4 text-center">Registration</h2>
-                          <div class="d-none alert alert-danger" id="form-error"></div>
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="firstName"
+                            id="firstName"
+                            placeholder="First Name"
+                            required
+                          />
+                          <label for="firstName" class="form-label"
+                            >First Name</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="lastName"
+                            id="lastName"
+                            placeholder="First Name"
+                            required
+                          />
+                          <label for="lastName" class="form-label"
+                            >Last Name</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            id="email"
+                            placeholder="name@example.com"
+                            required
+                          />
+                          <label for="email" class="form-label">Email</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            id="password"
+                            value=""
+                            placeholder="Password"
+                            required
+                          />
+                          <label for="password" class="form-label"
+                            >Password</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="tel"
+                            class="form-control"
+                            name="phoneNum"
+                            id="phoneNum"
+                            placeholder="Phone Number"
+                            required
+                          />
+                          <label for="phoneNum" class="form-label"
+                            >Phone Number</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="address"
+                            id="address"
+                            placeholder="Address"
+                            required
+                          />
+                          <label for="address" class="form-label"
+                            >Address</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            name="iAgree"
+                            id="iAgree"
+                            required
+                          />
+                          <label
+                            class="form-check-label text-secondary"
+                            for="iAgree"
+                          >
+                            I agree to the
+                            <a
+                              href="#!"
+                              class="link-primary text-decoration-none"
+                              >terms and conditions</a
+                            >
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <button
+                            class="btn bg-website rounded-0 text-light btn-lg"
+                            type="submit"
+                          >
+                            Sign up
+                          </button>
                         </div>
                       </div>
                     </div>
-                    <form action="#!">
-                      <div class="row gy-3 overflow-hidden">
-                        <div class="col-12">
-                          <div class="form-floating mb-2">
-                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" required>
-                            <label for="firstName" class="form-label">First Name</label>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <div class="form-floating mb-2">
-                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="First Name" required>
-                            <label for="lastName" class="form-label">Last Name</label>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <div class="form-floating mb-2">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                            <label for="email" class="form-label">Email</label>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <div class="form-floating mb-2">
-                            <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
-                            <label for="password" class="form-label">Password</label>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
-                            <label class="form-check-label text-secondary" for="iAgree">
-                              I agree to the <a href="#!" class="link-primary text-decoration-none">terms and conditions</a>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <div class="d-grid">
-                            <button class="btn bg-website rounded-0 text-light btn-lg" type="submit">Sign up</button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                    <div class="row">
-                      <div class="col-12">
-                        <p class="mb-0 mt-5 text-secondary text-center">Already have an account? <a href="#!" class="link-primary text-decoration-none">Sign in</a></p>
-                      </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="mb-0 mt-5 text-secondary text-center">
+                        Already have an account?
+                        <a href="#!" class="link-primary text-decoration-none"
+                          >Sign in</a
+                        >
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -72,4 +171,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
