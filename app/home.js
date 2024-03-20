@@ -1,9 +1,9 @@
 import Product from "../src/product.js";
+import Storage from "../src/storage.js";
 let cardsRecently = document.getElementById("cards-recently");
 console.log(cardsRecently);
 Product.productsAll()
   .then((products) => {
-    console.log(products);
     let count = 0;
     let random_id = 0.0;
     for (const productId in products) {

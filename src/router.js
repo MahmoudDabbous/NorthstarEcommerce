@@ -49,7 +49,7 @@ export default class Router {
       (route === "" ? "home" : this.routes[route].namePage) +
       ".html";
     if (auth) {
-      if(!Authenticator.isLoggedIn()){
+      if (!Authenticator.isLoggedIn()) {
         window.location.href = "/ITI-Javascrit-Project/login";
       } else {
         window.location.href = "/ITI-Javascrit-Project/profile";
