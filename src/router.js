@@ -49,7 +49,7 @@ export default class Router {
       (route === "" ? "home" : this.routes[route].namePage) +
       ".html";
     if (auth) {
-      if(!Authenticator.isLoggedIn()){
+      if (!Authenticator.isLoggedIn()) {
         window.location.href = "/ITI-Javascrit-Project/login";
       } else {
         window.location.href = "/ITI-Javascrit-Project/profile";
@@ -67,6 +67,7 @@ export default class Router {
       .then((htmlRoutes) => {
         document.getElementById("app").innerHTML = htmlRoutes;
         this.setActiveLink(route);
+
         this.loadScript(script);
       })
       .catch((error) => {
@@ -83,6 +84,7 @@ export default class Router {
       links_a.forEach((link) => {
         if (route === link.getAttribute("href")) {
           link.classList.add("active");
+          // this.loadScript(route);
         } else {
           link.classList.remove("active");
         }

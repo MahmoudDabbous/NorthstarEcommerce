@@ -1,24 +1,64 @@
+import User from "../src/user.js";
+import Authenticator from "../src/authenticator.js";
+
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
 const telRegex = /^\d+$/;
 
-const emailInput = document.querySelector("#email");
-const telInput = document.querySelector(".tel-edit");
+/* Taking inputs from html */
+let emailInput = document.querySelector("#email");
+let telInput = document.querySelector(".tel-edit");
+let nameInput = document.querySelector("#username");
+let addressInput = document.querySelector("#address");
+let labelName = document.querySelector("#label-name");
+
+/* getting current user from authenticator */
+const currentUser = Authenticator.currentUser();
+const user = new User(currentUser);
+labelName.innerHTML = user.name; /* changing label's name dynamically */
+
+/* To populate data */
+nameInput.value = user.name;
+emailInput.value = user.email;
+telInput.value = user.phoneNum;
+addressInput.value = user.address;
 
 function validateForm(e) {
   e.preventDefault();
 
   removeErrorMessages();
 
+  let hasError = false;
+
+  // const currentUser = Authenticator.currentUser();
+  // const user = new User(currentUser);
+  // labelName.innerHTML = user.name;
+
   /*Email validation*/
   if (!emailRegex.test(emailInput.value)) {
     const emailErrorMessage = createErrorMessage("Invalid Email Format");
     emailInput.parentNode.appendChild(emailErrorMessage);
+    hasError = true;
   }
 
   /* Telephone Number validation*/
   if (!telRegex.test(telInput.value)) {
     const telErrorMessage = createErrorMessage("Enter Numbers Only");
     telInput.parentNode.appendChild(telErrorMessage);
+    hasError = true;
+  }
+
+  if (!hasError) {
+    /* Assigning new inputs "updated user" */
+    let updatedUser = {
+      name: nameInput.value,
+      email: emailInput.value,
+      password: user.password,
+      phone: telInput.value,
+      address: addressInput.value,
+    };
+
+    User.updateUser(currentUser, updatedUser);
+    labelName.innerHTML = nameInput.value;
   }
 }
 

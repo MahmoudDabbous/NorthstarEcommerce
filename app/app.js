@@ -31,9 +31,10 @@ const routes = new Router({
     script: "register",
   },
   profile: {
-    linkLabel: "",
+    linkLabel: "PROFILE",
     namePage: "profile",
     auth: !Authenticator.isLoggedIn(),
+    script: "profile",
   },
   itempage: {
     linkLabel: "",
@@ -47,10 +48,18 @@ const routes = new Router({
     script: "logout",
   },
   "edit-profile": {
-    linkLabel: "edit-profile",
+    linkLabel: "EDIT PROFILE",
     namePage: "edit-profile",
 
     auth: !Authenticator.isLoggedIn(),
+    script: "edit-profile",
+  },
+  checkout: {
+    linkLabel: "CHECKOUT",
+    namePage: "checkout",
+
+    auth: !Authenticator.isLoggedIn(),
+    script: "checkout",
   },
 });
 
