@@ -23,6 +23,7 @@ const routes = new Router({
     linkLabel: "CONTACT",
     namePage: "contact",
     auth: false,
+    scipt: "contact",
   },
   register: {
     linkLabel: "REGISTER",
@@ -52,7 +53,6 @@ const routes = new Router({
     namePage: "cart",
     auth: !Authenticator.isLoggedIn(),
     script: "addCart",
-    
   },
   "edit-profile": {
     linkLabel: "EDIT PROFILE",

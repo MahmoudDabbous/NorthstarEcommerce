@@ -33,7 +33,8 @@
 // // Add form submission event listener
 // form.addEventListener("submit", handleSubmit);
 //____________________________________________________________________________________
-document.getElementById("sendMessage").addEventListener("click", function () {
-  document.getElementsByClassName("form-side").innerHTML =
-    "<h1>Thank You For Contacting Us</h1>";
-});
+// document.getElementById("sendMessage").addEventListener("click", function () {
+//   document.getElementsByClassName("form-side").innerHTML =
+//     "<h1>Thank You For Contacting Us</h1>";
+// });
+console.log("contact.js loaded...");
