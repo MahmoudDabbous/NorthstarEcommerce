@@ -16,14 +16,14 @@ export default class Router {
       if (!auth && linkLabel != "") {
         let str = `
           <li class="nav-item">
-            <a id="${namePage}-nav" class="nav-link link text-dark" aria-current="page" href="${route}">${linkLabel}</a>
+            <a id="${namePage}-nav" class="nav-link link navigator text-dark" aria-current="page" href="${route}">${linkLabel}</a>
           </li>
         `;
         this.links.insertAdjacentHTML("beforeend", str);
       }
     });
 
-    this.links_a = document.querySelectorAll(".link");
+    this.links_a = document.querySelectorAll(".navigator");
 
     this.links_a.forEach((link) => {
       link.addEventListener("click", (e) => {
@@ -75,7 +75,7 @@ export default class Router {
   }
 
   setActiveLink(route) {
-    let links_a = document.querySelectorAll(".link");
+    let links_a = document.querySelectorAll(".navigator");
     const { script } = this.routes[route] || {};
     if (route == "") {
       links_a[0].classList.add("active");
@@ -95,10 +95,14 @@ export default class Router {
   loadScript(script) {
     if (script) {
       let scriptTag = document.createElement("script");
+      let main_script = document.getElementById("script");
+      var childScripts = main_script.children;
+      Array.from(childScripts).forEach(function (child) {
+        main_script.removeChild(child);
+      });
       scriptTag.src = this.abs_path_scripts + script + ".js";
       scriptTag.type = "module";
-      document.getElementById("script").innerHTML = "";
-      document.getElementById("script").appendChild(scriptTag);
+      main_script.appendChild(scriptTag);
     }
   }
 }
