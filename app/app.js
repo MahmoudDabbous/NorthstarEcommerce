@@ -47,6 +47,13 @@ const routes = new Router({
     auth: !Authenticator.isLoggedIn(),
     script: "logout",
   },
+  cart: {
+    linkLabel: "",
+    namePage: "cart",
+    auth: !Authenticator.isLoggedIn(),
+    script: "addCart",
+    
+  },
   "edit-profile": {
     linkLabel: "EDIT PROFILE",
     namePage: "edit-profile",
@@ -75,15 +82,3 @@ const routes = new Router({
     });
   }
 })();
-
-/**
- *
- *  {
- *   "eksd@rfmds.com": {
- *      "password": "123456",
- *      "name": "Ahmed",
- *      "cart":[{}...],
- *      "wishlist":[{}...],
- *  }
- * }
- */
