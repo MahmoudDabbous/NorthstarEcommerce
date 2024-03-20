@@ -34,7 +34,7 @@ export default class Router {
         });
         e.target.classList.add("active");
         history.pushState({}, "", href);
-        this.loadContent();
+        window.location.href =  link;
       });
     });
 
