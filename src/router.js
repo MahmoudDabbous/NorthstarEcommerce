@@ -75,7 +75,6 @@ export default class Router {
   }
 
   setActiveLink(route) {
-    debugger;
     let links_a = document.querySelectorAll(".link");
     const { script } = this.routes[route] || {};
     if (route == "") {
