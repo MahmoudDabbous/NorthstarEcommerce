@@ -13,7 +13,7 @@ export default class Router {
   loadRouter() {
     Object.keys(this.routes).forEach((route) => {
       const { linkLabel, namePage, auth } = this.routes[route];
-      if (!auth) {
+      if (!auth && linkLabel != "") {
         let str = `
           <li class="nav-item">
             <a id="${namePage}-nav" class="nav-link link text-dark" aria-current="page" href="${route}">${linkLabel}</a>
