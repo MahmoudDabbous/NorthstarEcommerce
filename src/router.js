@@ -8,6 +8,7 @@ export default class Router {
       window.location.origin + "/ITI-Javascrit-Project/app/";
     this.routes = routes;
     this.links = document.getElementById("links");
+    this.offcanvas = document.querySelector("#offcanvas");
   }
 
   loadRouter() {
@@ -19,7 +20,10 @@ export default class Router {
             <a id="${namePage}-nav" class="nav-link link navigator text-dark" aria-current="page" href="${route}">${linkLabel}</a>
           </li>
         `;
-        this.links.insertAdjacentHTML("beforeend", str);
+        if (namePage == "logout")
+          this.offcanvas.insertAdjacentHTML("beforeend", str);
+        else
+          this.links.insertAdjacentHTML("beforeend", str);
       }
     });
 

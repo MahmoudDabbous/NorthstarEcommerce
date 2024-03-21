@@ -41,9 +41,10 @@ const routes = new Router({
     linkLabel: "",
     namePage: "itempage",
     auth: false,
+    script:"itempage"
   },
   logout: {
-    linkLabel: "LOGOUT",
+    linkLabel: "Logout",
     namePage: "logout",
     auth: !Authenticator.isLoggedIn(),
     script: "logout",

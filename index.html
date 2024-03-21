@@ -1,164 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-    <!-- link for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <!-- myown css stylesheet -->
-    <title>Final Project JavaScript</title>
 
-    <link rel="stylesheet" href="resources/css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+  <!-- link for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- myown css stylesheet -->
+  <title>Final Project JavaScript</title>
 
-  <body>
-    <div id="root" class="container-fluid">
-      <!-- nav -->
-      <div class="row">
-        <nav class="navbar navbar-expand-lg bg-light col-12">
-          <div class="container-fluid">
-            <a class="navbar-brand">NorthStar</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div
-              class="collapse navbar-collapse justify-content-around"
-              id="navbarSupportedContent"
-            >
-              <ul id="links" class="navbar-nav"></ul>
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a
-                    class="nav-link link text-dark fa-regular fa-user"
-                    aria-current="page"
-                    href="profile"
-                  >
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link link text-dark position-relative fa-solid fa-bag-shopping"
-                    aria-current="page"
-                    href="home"
-                  >
-                    <span
-                      id="badge-span-header"
-                      class="position-absolute top-0 start-100 translate-middle badge rounded-circle"
-                    >
-                      10
-                      <span class="visually-hidden">unread messages</span>
-                    </span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link link text-dark fa-solid fa-bars"
-                    aria-current="page"
-                    href="home"
-                  >
-                  </a>
-                </li>
-              </ul>
-            </div>
+  <link rel="stylesheet" href="resources/css/style.css" />
+</head>
+
+<body>
+  <div id="root" class="container-fluid">
+    <!-- nav -->
+    <div class="row">
+      <nav class="navbar navbar-expand-lg bg-light col-12">
+        <div class="container-fluid">
+          <a class="navbar-brand">NorthStar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+            <ul id="links" class="navbar-nav"></ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link link text-dark navigator fa-regular fa-user" aria-current="page" href="profile">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link text-dark navigator position-relative fa-solid fa-bag-shopping"
+                  aria-current="page" href="cart">
+                  <span id="badge-span-header"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-circle">
+                    0
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link text-dark fa-solid fa-bars" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></a>
+              </li>
+            </ul>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
+  </div>
 
-    <!-- app -->
-    <div id="app" class="app"></div>
-
-    <div class="container-fluid">
-      <!-- footer -->
-      <div class="row">
-        <footer class="col-12 bg-dark text-light">
-          <div class="row p-4">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-              <p class="header-link-home">COMPANY INFO</p>
-              <p><a class="nav-link link link-home" href="home">About Us</a></p>
-              <p>
-                <a class="nav-link link link-home" href="home">Latest Posts</a>
-              </p>
-              <p>
-                <a class="nav-link link link-home" href="home">Contact Us</a>
-              </p>
-              <p><a class="nav-link link link-home" href="home">Shop</a></p>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-              <p class="header-link-home">HELP LINKS</p>
-              <p>
-                <a class="nav-link link link-home" href="home"
-                  >Tracking Order Status</a
-                >
-              </p>
-              <p>
-                <a class="nav-link link link-home" href="home"
-                  >Delivery Shipping Info</a
-                >
-              </p>
-              <p><a class="nav-link link link-home" href="home">FAQ</a></p>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-              <p class="header-link-home">USEFUL LINKS</p>
-              <p>
-                <a class="nav-link link link-home" href="home"
-                  >Special Offers</a
-                >
-              </p>
-              <p>
-                <a class="nav-link link link-home" href="home">Gift Cards</a>
-              </p>
-              <p>
-                <a class="nav-link link link-home" href="home">Advetising</a>
-              </p>
-              <p>
-                <a class="nav-link link link-home" href="home">Terms of Use</a>
-              </p>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-              <p class="header-link-home">GET IN THE KNOW</p>
-              <form class="d-flex" role="search">
-                <input
-                  class="me-2"
-                  id="search-inpt-home"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button id="search-btn-home" type="submit">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-              </form>
-            </div>
-          </div>
-          <hr />
-          <div class="row p-3">
-            <div class="col-6">
-              <p>&#169; 2020 NorthStar eCommerce</p>
-              <p>Privacy Policy Terms & Conditions</p>
-            </div>
-            <div class="col-6 text-end">
-              <i class="fa-brands fa-cc-visa fs-3"></i>
-              <i class="fa-brands fa-cc-mastercard fs-3"></i>
-              <i class="fa-brands fa-paypal fs-3"></i>
-            </div>
-          </div>
-        </footer>
-      </div>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">NorthStar</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <script type="module" src="app/app.js"></script>
-    <div id="script"></div>
-  </body>
+    <div  class="offcanvas-body">
+      <ul id="offcanvas" class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link link navigator text-dark" aria-current="page" href="home">HOME</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- app -->
+  <div id="app" class="app"></div>
+
+  <div class="container-fluid">
+    <!-- footer -->
+    <div class="row">
+      <footer class="col-12 bg-dark text-light">
+        <div class="row p-4">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+            <p class="header-link-home">COMPANY INFO</p>
+            <p><a class="nav-link link link-home" href="home">About Us</a></p>
+            <p>
+              <a class="nav-link link link-home" href="home">Latest Posts</a>
+            </p>
+            <p>
+              <a class="nav-link link link-home" href="home">Contact Us</a>
+            </p>
+            <p><a class="nav-link link link-home" href="home">Shop</a></p>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+            <p class="header-link-home">HELP LINKS</p>
+            <p>
+              <a class="nav-link link link-home" href="home">Tracking Order Status</a>
+            </p>
+            <p>
+              <a class="nav-link link link-home" href="home">Delivery Shipping Info</a>
+            </p>
+            <p><a class="nav-link link link-home" href="home">FAQ</a></p>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+            <p class="header-link-home">USEFUL LINKS</p>
+            <p>
+              <a class="nav-link link link-home" href="home">Special Offers</a>
+            </p>
+            <p>
+              <a class="nav-link link link-home" href="home">Gift Cards</a>
+            </p>
+            <p>
+              <a class="nav-link link link-home" href="home">Advetising</a>
+            </p>
+            <p>
+              <a class="nav-link link link-home" href="home">Terms of Use</a>
+            </p>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+            <p class="header-link-home">GET IN THE KNOW</p>
+            <form class="d-flex" role="search">
+              <input class="me-2" id="search-inpt-home" type="search" placeholder="Search" aria-label="Search" />
+              <button id="search-btn-home" type="submit">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <div class="row p-3">
+          <div class="col-6">
+            <p>&#169; 2020 NorthStar eCommerce</p>
+            <p>Privacy Policy Terms & Conditions</p>
+          </div>
+          <div class="col-6 text-end">
+            <i class="fa-brands fa-cc-visa fs-3"></i>
+            <i class="fa-brands fa-cc-mastercard fs-3"></i>
+            <i class="fa-brands fa-paypal fs-3"></i>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="app/app.js"></script>
+  <div id="script"></div>
+</body>
+
 </html>
