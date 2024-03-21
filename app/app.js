@@ -40,7 +40,7 @@ const routes = new Router({
   itempage: {
     linkLabel: "",
     namePage: "itempage",
-    auth: false,
+    auth: !Authenticator.isLoggedIn(),
     script:"itempage"
   },
   logout: {
@@ -58,14 +58,12 @@ const routes = new Router({
   "edit-profile": {
     linkLabel: "",
     namePage: "edit-profile",
-
     auth: !Authenticator.isLoggedIn(),
     script: "edit-profile",
   },
   checkout: {
     linkLabel: "",
     namePage: "checkout",
-
     auth: !Authenticator.isLoggedIn(),
     script: "checkout",
   },

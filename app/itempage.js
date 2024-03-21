@@ -7,13 +7,17 @@ let descProduct = document.querySelector(".desc-product");
 let reviews = document.querySelector("#reviews");
 let addProduct = document.querySelector("#add-product");
 let badge_span_header = document.querySelector("#badge-span-header");
-let search = window.location.search;
+let search = new URLSearchParams(window.location.search);
+
 const products = new Storage("produts");
 const cart = new Storage("cart");
 let productId = "";
 
-if (search != "" && search.split("?")[1].split("=")[1] != "") {
-    productId = search.split("?")[1].split("=")[1];
+if (search.size > 0) {
+    productId = search.get("id");
+}
+else {
+    window.location.href = "home";
 }
 
 if (productId) {
@@ -35,8 +39,6 @@ if (productId) {
             reviews.insertAdjacentHTML("beforeend", review);
         });
     }
-} else {
-    window.location.href = "home";
 }
 
 addProduct.addEventListener("click", function (e) {
