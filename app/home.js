@@ -16,6 +16,8 @@ if (!localStorage.getItem("produts")) {
     .catch((error) => console.log(error));
 }
 
+
+
 //     console.log("Product ID:", productId);
 //     console.log("Product Name:", product.name);
 //     console.log("Price:", product.price);
@@ -40,8 +42,8 @@ if (!localStorage.getItem("produts")) {
       }
       let card = `
              <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="card border-0 text-center w-100">
-                    <a href="itempage?id=${productId}" class="w-100"><img src="resources/images/women/women-01.jpg" class="w-100" alt="..."></a>
+                <div class="card border-0 text-center">
+                    <a href="itempage?id=${productId}"><img style="min-height:200px;max-height:200px" class="img-thumbnail rounded-0 border-0" src="resources/images/cart/${product.image}"  alt="..."></a>
                    <div class="card-body">
                         <h5 class="card-title">${product.name}</h5>
                        <p class="card-text">

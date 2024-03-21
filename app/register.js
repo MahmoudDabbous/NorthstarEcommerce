@@ -1,10 +1,10 @@
 import Authenticator from "../src/authenticator.js";
 
+
 const form = document.querySelector("#app #register form");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const email = form.email.value;
   const password = form.password.value;
   const firstName = form.firstName.value;
@@ -12,7 +12,6 @@ form.addEventListener("submit", (e) => {
   const phoneNum = form.phoneNum.value;
   const address = form.address.value;
   const name = `${firstName} ${lastName}`;
-
   const result = Authenticator.register(email, {
     password,
     name,
