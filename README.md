@@ -18,4 +18,4 @@ Steps to install and run the ITI-Javascrit-Project:
      git clone https://github.com/MahmoudDabbous/ITI-Javascrit-Project
     ```
 
-3. Start the server.
+3. Start the server and open your browser at `http://localhost/ITI-Javascrit-Project`.

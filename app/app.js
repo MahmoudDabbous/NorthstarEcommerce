@@ -5,7 +5,7 @@ import Router from "../src/router.js";
 
 let badge_span_header = document.querySelector("#badge-span-header");
 const cart = new Cart("cart");
-badge_span_header.innerHTML=cart.productIds().length;
+badge_span_header.innerHTML = cart.productIds().length ?? 0;
 
 const routes = new Router({
   home: {
@@ -18,17 +18,17 @@ const routes = new Router({
     namePage: "about",
     auth: false,
   },
+  contact: {
+    linkLabel: "CONTACT US",
+    namePage: "contact",
+    auth: false,
+    script: "contact",
+  },
   login: {
     linkLabel: "LOGIN",
     namePage: "login",
     auth: Authenticator.isLoggedIn(),
     script: "login",
-  },
-  contact: {
-    linkLabel: "CONTACT",
-    namePage: "contact",
-    auth: false,
-    script: "contact",
   },
   register: {
     linkLabel: "REGISTER",
@@ -46,7 +46,7 @@ const routes = new Router({
     linkLabel: "",
     namePage: "itempage",
     auth: !Authenticator.isLoggedIn(),
-    script:"itempage"
+    script: "itempage",
   },
   logout: {
     linkLabel: "Logout",
@@ -86,5 +86,3 @@ const routes = new Router({
     });
   }
 })();
-
-
