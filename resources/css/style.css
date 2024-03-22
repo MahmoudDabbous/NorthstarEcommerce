@@ -208,11 +208,12 @@ li {
 }
 
 .payment-info {
-  background: blue;
+  background: rgb(255, 255, 255);
   padding: 10px;
   border-radius: 6px;
-  color: #fff;
+  color: #000000;
   font-weight: bold;
+  box-shadow: #d4d4d4 0px 0px 10px;
 }
 
 .product-details {
@@ -266,18 +267,18 @@ label.radio span {
 
 label.radio input:checked + span {
   border-color: #fff;
-  background-color: blue;
+  background-color: rgb(37, 40, 233);
   color: #fff;
 }
 
 .credit-inputs {
-  background: rgb(102, 102, 221);
+  background: rgb(228, 228, 228);
   color: #fff !important;
-  border-color: rgb(102, 102, 221);
+  border-color: rgb(185, 185, 185);
 }
 
 .credit-inputs::placeholder {
-  color: #fff;
+  color: #000000;
   font-size: 13px;
 }
 
@@ -287,8 +288,8 @@ label.radio input:checked + span {
 }
 
 .form-control.credit-inputs:focus {
-  background: rgb(102, 102, 221);
-  border: rgb(102, 102, 221);
+  background: rgb(173, 173, 173);
+  border: rgb(90, 90, 90);
 }
 
 .line {
