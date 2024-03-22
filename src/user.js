@@ -21,6 +21,7 @@ export default class User {
   }
 
 
+
   addToCart(productId, data) {
     const exists = this.readCart().some(element => element.productId === productId);
 
@@ -101,6 +102,5 @@ export default class User {
         session.create("loggedInUser", data.email);
       }
     }
-    console.log(data);
   }
 }
