@@ -10,6 +10,7 @@ var tableBody = document.querySelector("#table-body");
 var Shipping = document.querySelector("#table-Shipping");
 var Total=document.querySelector("#Total");
 var SubTotal=document.querySelector("#table-Subtotal");
+var clear_checkout=document.querySelector("#clear-checkout");
 
 let totalPriceOfProduects=0;
 
@@ -36,3 +37,11 @@ totalPriceOfProduects+=totalPriceOfProduect;
 SubTotal.textContent=`${totalPriceOfProduects}.00$`;
 Shipping.textContent=`${50}.00$`;
 Total.textContent=`${totalPriceOfProduects+50}.00$`
+
+
+clear_checkout.addEventListener("click",()=>{
+  storage.productIds().forEach(element => {
+
+    storage.removeFromCart(element);
+  })
+})
