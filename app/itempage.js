@@ -1,4 +1,8 @@
 import Storage from "../src/storage.js";
+import Cart from "../src/cart.js";
+import User  from "../src/user.js";
+import Authenticator from "../src/authenticator.js";
+
 let imgProduct = document.querySelector("#img-product");
 let nameProduct = document.querySelector("#name-product");
 let priceProduct = document.querySelector("#price-product");
@@ -9,8 +13,10 @@ let addProduct = document.querySelector("#add-product");
 let badge_span_header = document.querySelector("#badge-span-header");
 let search = new URLSearchParams(window.location.search);
 
+const user = new User(Authenticator.currentUser());
+
 const products = new Storage("produts");
-const cart = new Storage("cart");
+const cart = new Cart("cart");
 let productId = "";
 
 if (search.size > 0) {
@@ -43,24 +49,16 @@ if (productId) {
 
 addProduct.addEventListener("click", function (e) {
     if (productId) {
-        let quantity = products.read(productId).quantity;
-        if (cart.exists(productId)) {
-            let count = (parseInt(cart.read(productId).count));
-            if (count < quantity) {
-                const product = {
-                    productId: productId,
-                    count: ++count,
-                };
-                cart.update(productId, product);
-            } else
-                alert("This product finished");
-        } else {
+    
             const product = {
-                productId: productId,
+                productId:productId,
                 count: 1,
             };
-            cart.create(productId, product);
+            user.addToCart(productId,product);
         }
-    }
-    badge_span_header.textContent = cart.count();
+   
+  
 });
+
+
+

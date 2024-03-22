@@ -9,32 +9,28 @@ export default class Cart {
         this.collection = collection;
         this.storage = new Storage(this.collection);
         this.storage.save();
+        this.alldata={};
     }
 
-    addToCart(email, data) {
-
-
+    addToCart(productId, data) {
+        
         if (Authenticator.isLoggedIn()) {
-            const user = new User(Authenticator.currentUser());
-
-            user.addToCart(productId);
-
             this.storage.create(productId, data);
             return true;
         }
-
         return false;
     }
+    
 
 
 
-    removeFromCart(email) {
+    removeFromCart(productId) {
         const storage = new Storage(this.collection);
 
         if (Authenticator.isLoggedIn()) {
             const user = new User(Authenticator.currentUser());
             user.removeFromCart(productId);
-            storage.delete(productId);
+            
             return true;
         }
 
@@ -42,12 +38,13 @@ export default class Cart {
     }
 
 
-    udate(email, data) {
+    update(email, data) {
 
         const storage = new Storage(this.collection);
 
         if (Authenticator.isLoggedIn()) {
-            storage.update(productId, data);
+
+            storage.update(email, data);
             return true;
         }
 
@@ -55,6 +52,15 @@ export default class Cart {
 
     }
 
+    exists(email) {
+        if(this.allProducts()[email])
+        {
+            return true;
+        }
+
+        return false;
+      }
+    
     count() {
         const storage = new Storage(this.collection);
 
@@ -85,7 +91,20 @@ export default class Cart {
         if (Authenticator.isLoggedIn()) {
 
             const user = new User(Authenticator.currentUser());
-            return user.readCart();
+            return user.Ids();
+
+        }
+
+        return false;
+    }
+
+
+     getQuantity(productId)
+    {
+        if (Authenticator.isLoggedIn()) {
+
+            const user = new User(Authenticator.currentUser());
+            return user.getCount(productId);
 
         }
 

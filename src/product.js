@@ -53,4 +53,5 @@ export default class Product {
         .catch((error) => reject(error));
     });
   }
+  
 }

@@ -21,28 +21,61 @@ export default class User {
   }
 
 
-  addToCart(productId) {
-    const index = this.cart.indexOf(productId);
-    if (index === -1) {
-    this.cart.push(productId);
-    this.save();
+  addToCart(productId, data) {
+    const exists = this.readCart().some(element => element.productId === productId);
+
+      if (!exists) {
+          this.cart.push(data);
+          this.save();
+      }
+ }
+
+
+  updatecount(productId, count) {
+  
+    const existingProductIndex = this.readCart().findIndex(element => element.productId === productId);
+
+    if (existingProductIndex !== -1) {
+      
+        this.cart[existingProductIndex].count = count;
+    } else {
+        
+        this.cart.push({ productId: productId, count: count });
     }
 
   
+    this.save();
   }
+
+    removeFromCart(productIdToRemove) {
+      
+      const indexToRemove = this.cart.findIndex(item => item.productId === productIdToRemove);
+  
+      if (indexToRemove !== -1) {
+         
+          this.cart.splice(indexToRemove, 1);
+          this.save();
+          return true; 
+      } else {
+          
+          return false;
+      }
+  }
+  
+  getCount(productId) {
+    const product = this.readCart().find(item => item.productId === productId);
+
+    return product ? product.count : 0;
+}
 
   readCart()
   {
     return this.cart;
   }
 
-  removeFromCart(productId) {
-    const index = this.cart.indexOf(productId);
-    if (index !== -1) {
-      this.cart.splice(index, 1);
-      this.save();
+  Ids() {
+    return this.cart.map(item => item.productId);
     }
-  }
 
   addToWishlist(productId) {
     this.wishlist.push(productId);
