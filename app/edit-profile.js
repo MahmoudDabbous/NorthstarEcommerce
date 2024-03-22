@@ -1,6 +1,7 @@
 import User from "../src/user.js";
 import Authenticator from "../src/authenticator.js";
 
+/* Regex for email and telephone number  */
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
 const telRegex = /^\d+$/;
 
@@ -22,16 +23,13 @@ emailInput.value = user.email;
 telInput.value = user.phoneNum;
 addressInput.value = user.address;
 
+/* function to validate form and used when clicking the button  */
 function validateForm(e) {
   e.preventDefault();
 
   removeErrorMessages();
 
   let hasError = false;
-
-  // const currentUser = Authenticator.currentUser();
-  // const user = new User(currentUser);
-  // labelName.innerHTML = user.name;
 
   /*Email validation*/
   if (!emailRegex.test(emailInput.value)) {
@@ -53,12 +51,13 @@ function validateForm(e) {
       name: nameInput.value,
       email: emailInput.value,
       password: user.password,
-      phone: telInput.value,
+      phoneNum: telInput.value,
       address: addressInput.value,
     };
 
     User.updateUser(currentUser, updatedUser);
     labelName.innerHTML = nameInput.value;
+    window.location.href = "profile";
   }
 }
 
@@ -78,5 +77,6 @@ function removeErrorMessages() {
   });
 }
 
+/* event listener to make the function when clicking the button */
 const btn = document.querySelector(".btn-edit");
 btn.addEventListener("click", validateForm);
