@@ -110,5 +110,31 @@ export default class Cart {
 
         return false;
     }
+
+
+    incr_Quantity(productId,quantity)
+    {
+        if (Authenticator.isLoggedIn()) {
+
+            const user = new User(Authenticator.currentUser());
+            return user.incre_count(productId,quantity);
+
+        }
+
+        return false;
+    }
+
+
+    decr_Quantity(productId,quantity)
+    {
+        if (Authenticator.isLoggedIn()) {
+
+            const user = new User(Authenticator.currentUser());
+            return user.decre_count(productId,quantity);
+
+        }
+
+        return false;
+    }
 }
 
