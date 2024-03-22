@@ -32,7 +32,8 @@ function displayProducts() {
   });
   let Allproducts = prds.products();
 
-  items.innerHTML = `You have ${storage.productIds().length} items in your cart`;
+  items.textContent = `You have ${storage.productIds().length} items in your cart`;
+  console.log(items);
   storage.productIds().forEach(element => {
       const tempContainer = document.createElement("div");
       tempContainer.innerHTML = `

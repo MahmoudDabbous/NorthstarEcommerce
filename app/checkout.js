@@ -1,36 +1,38 @@
-import checkout from "./checkout.js";
+import Product from "../src/product.js";
+import Storage from "../src/storage.js";
+import Cart from "../src/cart.js";
+import User from "../src/user.js";
 
-// Sample data (replace this with your actual data)
-var products = [
-  { name: "Product 1", price: 10, quantity: 2 },
-  { name: "Product 2", price: 15, quantity: 3 },
-  { name: "Product 3", price: 20, quantity: 1 },
-];
+const storage = new Cart("users");
+const prds = new Storage("produts");
 
-var tableBody = document.getElementById("table-body");
-var total = 0;
+var tableBody = document.querySelector("#table-body");
+var Shipping = document.querySelector("#table-Shipping");
+var Total=document.querySelector("#Total");
+var SubTotal=document.querySelector("#table-Subtotal");
 
-// Loop through products and populate the table
-products.forEach(function (product) {
-  var productTotal = product.price * product.quantity;
-  total += productTotal;
+let totalPriceOfProduects=0;
 
-  var row = `
-      <tr>
-        <td>${product.name}</td>
-        <td>${product.price}</td>
-        <td>${product.quantity}</td>
-        <td>${productTotal}</td>
-      </tr>
-    `;
-  tableBody.innerHTML += row;
+
+let Allproducts = prds.products();
+storage.productIds().forEach(element => {
+  const tempContainer = document.createElement("div");
+  let totalPriceOfProduect=Allproducts[element]["price"]*storage.getQuantity(element);
+  var row= `   
+  <tr>
+    <td>${Allproducts[element]["name"]}</td>
+    <td>${storage.getQuantity(element)}</td>
+    <td>${Allproducts[element]["price"]}</td>
+    <td>${totalPriceOfProduect}.00$</td>
+  </tr>
+`;
+
+tableBody.innerHTML += row;
+
+totalPriceOfProduects+=totalPriceOfProduect;
 });
 
-// Add total row at the end
-var totalRow = `
-    <tr>
-      <td colspan="3" class="fw-bold text-end">Total:</td>
-      <td>${total}</td>
-    </tr>
-  `;
-tableBody.innerHTML += totalRow;
+
+SubTotal.textContent=`${totalPriceOfProduects}.00$`;
+Shipping.textContent=`${50}.00$`;
+Total.textContent=`${totalPriceOfProduects+50}.00$`

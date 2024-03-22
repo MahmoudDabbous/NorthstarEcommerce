@@ -5,8 +5,11 @@ import Router from "../src/router.js";
 
 let badge_span_header = document.querySelector("#badge-span-header");
 const cart = new Cart("cart");
+if(Authenticator.isLoggedIn()){
 badge_span_header.innerHTML=cart.productIds().length;
-
+}else{
+  badge_span_header.innerHTML="";
+}
 const routes = new Router({
   home: {
     linkLabel: "HOME",
