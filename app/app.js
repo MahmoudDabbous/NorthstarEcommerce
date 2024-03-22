@@ -22,17 +22,17 @@ const routes = new Router({
     namePage: "about",
     auth: false,
   },
+  contact: {
+    linkLabel: "CONTACT US",
+    namePage: "contact",
+    auth: false,
+    script: "contact",
+  },
   login: {
     linkLabel: "LOGIN",
     namePage: "login",
     auth: Authenticator.isLoggedIn(),
     script: "login",
-  },
-  contact: {
-    linkLabel: "CONTACT",
-    namePage: "contact",
-    auth: false,
-    script: "contact",
   },
   register: {
     linkLabel: "REGISTER",
@@ -50,7 +50,7 @@ const routes = new Router({
     linkLabel: "",
     namePage: "itempage",
     auth: !Authenticator.isLoggedIn(),
-    script:"itempage"
+    script: "itempage",
   },
   logout: {
     linkLabel: "Logout",
@@ -90,5 +90,3 @@ const routes = new Router({
     });
   }
 })();
-
-

@@ -12,7 +12,7 @@ const prds = new Storage("products");
 //---------------------remove product From Local Storage---------------------------------------
 function removeFromLocalStorage(productId) {
   //  console.log(product_id);
-  storage. removeFromCart(productId);
+  storage.removeFromCart(productId);
   let badge_span_header = document.querySelector("#badge-span-header");
   const cart = new Cart("cart");
   badge_span_header.textContent=cart.productIds().length
@@ -25,6 +25,8 @@ function removeFromLocalStorage(productId) {
 
 //---------------------dispaly products in cart page------------------------------------------
 // 
+item.textContent = `You have ${storage.productIds().length} items in your cart`;
+
 function displayProducts() {
   var childScripts = item.children;
   Array.from(childScripts).forEach(function(child) {
@@ -32,7 +34,7 @@ function displayProducts() {
   });
   let Allproducts = prds.products();
 
-  items.innerHTML = `You have ${storage.productIds().length} items in your cart`;
+ 
   storage.productIds().forEach(element => {
       const tempContainer = document.createElement("div");
       tempContainer.innerHTML = `
