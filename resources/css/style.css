@@ -58,8 +58,7 @@ li {
   font-weight: bold !important;
 }
 
-#img-home {
-  background-image: url("../images/home-main.jpeg");
+.img-home {
   background-position: center;
   background-size: cover;
   min-height: 500px;

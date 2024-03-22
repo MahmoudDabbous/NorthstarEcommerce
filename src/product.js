@@ -1,57 +1,39 @@
+import Storage from "./storage.js";
 export default class Product {
   static abs_path_data =
     window.location.origin + "/ITI-Javascrit-Project/data/";
-  constructor(
-    id,
-    name,
-    price,
-    category,
-    description,
-    image,
-    rating,
-    comments,
-    quantity
-  ) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.category = category;
-    this.description = description;
-    this.image = image;
-    this.rating = rating;
-    this.comments = comments;
-    this.quantity = quantity;
-  }
-
-  // Method to add a comment to the product
+  static storage = new Storage("products");
   addComment(user, comment, rating) {
     this.comments.push({ user, comment, rating });
   }
 
-  // Method to increase the quantity of the product
-  increaseQuantity(amount) {
-    this.quantity += amount;
+  static calculateTopSellers() {
+    const productsArray = Object.entries(Product.products()).map(([productId, product]) => ({
+      productId,
+      ...product
+    }));
+    productsArray.sort((a, b) => a.quantity - b.quantity);
+    return productsArray.slice(0, 4);
   }
 
-  // Method to decrease the quantity of the product
-  decreaseQuantity(amount) {
-    if (this.quantity >= amount) {
-      this.quantity -= amount;
-    } else {
-      console.log("Error: Quantity cannot be decreased below 0.");
-    }
+  static products() {
+    return Product.storage.products();
   }
-
   static productsAll() {
-    return new Promise((resolve, reject) => {
-      fetch(Product.abs_path_data + "products.json")
-        .then((res) => {
-          if (!res.ok) throw new Error("File can't load");
-          return res.json();
-        })
-        .then((res) => resolve(res))
-        .catch((error) => reject(error));
-    });
+    fetch(Product.abs_path_data + "products.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("File can't load");
+        return res.json();
+      })
+      .then((products) => {
+        for (const productId in products) {
+          if (products.hasOwnProperty(productId)) {
+            const product = products[productId];
+            Product.storage.create(productId, product);
+          }
+        }
+      })
+      .catch((error) => console.log(error));
   }
-  
+
 }

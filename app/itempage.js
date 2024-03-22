@@ -12,10 +12,10 @@ let reviews = document.querySelector("#reviews");
 let addProduct = document.querySelector("#add-product");
 let badge_span_header = document.querySelector("#badge-span-header");
 let search = new URLSearchParams(window.location.search);
-
+badge_span_header.style.display = "normal";
 const user = new User(Authenticator.currentUser());
 
-const products = new Storage("produts");
+const products = new Storage("products");
 const cart = new Cart("cart");
 let productId = "";
 
@@ -55,7 +55,7 @@ addProduct.addEventListener("click", function (e) {
                 count: 1,
             };
             user.addToCart(productId,product);
-            badge_span_header.innerHTML=cart.productIds().length;
+            badge_span_header.textContent=cart.productIds().length;
 
         }
         
@@ -63,7 +63,7 @@ addProduct.addEventListener("click", function (e) {
     });
     
     
-    badge_span_header.innerHTML=cart.productIds().length;
+    badge_span_header.textContent=cart.productIds().length;
 
 
  

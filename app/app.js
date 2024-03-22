@@ -2,11 +2,15 @@ import "../resources/js/bootstrap.bundle.min.js";
 import Authenticator from "../src/authenticator.js";
 import Cart from "../src/cart.js";
 import Router from "../src/router.js";
-
-let badge_span_header = document.querySelector("#badge-span-header");
 const cart = new Cart("cart");
-badge_span_header.innerHTML=cart.productIds().length;
-
+let count  = cart.productIds().length;
+let badge_span_header = document.querySelector("#badge-span-header");
+if(count){
+  badge_span_header.textContent=count;
+}
+else{
+  badge_span_header.style.display = "none";
+}
 const routes = new Router({
   home: {
     linkLabel: "HOME",
