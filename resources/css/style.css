@@ -5,7 +5,8 @@ body {
   font-family: Arimo;
   src: url("../fonts/Arimo/static/Arimo-Regular.ttf");
 }
-a,li{
+a,
+li {
   font-size: 1rem;
 }
 
@@ -130,7 +131,7 @@ a,li{
   background-image: url("../images/header_img.jpg");
 }
 
-/* for 2 classes with the same name */
+/* for 2 classes with the same functionality*/
 .model1-about {
   width: calc(50% - 15px);
   height: 500px;
@@ -155,7 +156,11 @@ a,li{
 }
 
 .testimonials-text-about {
-  margin-top: 200px;
+  margin-top: 100px;
+}
+
+.name-container-about {
+  margin-left: 120px;
 }
 
 @media (max-width: 575px) {
@@ -180,18 +185,10 @@ a,li{
     background-size: contain !important;
     height: 350px !important;
   }
-}
-
-@media (max-width: 1000px) {
-  .founder-about {
-    width: 300px;
-  }
-  .founder-container-about {
-    flex-wrap: wrap; /* when overflowing wrap */
-    margin-top: 100px;
+  .founders-container-about {
+    display: none !important;
   }
 }
-
 
 .payment-info {
   background: blue;
@@ -218,8 +215,8 @@ body {
 }
 
 .table-shadow {
-  -webkit-box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.42);
-  box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.42);
+  -webkit-box-shadow: 5px 5px 15px -2px rgba(0, 0, 0, 0.42);
+  box-shadow: 5px 5px 15px -2px rgba(0, 0, 0, 0.42);
 }
 
 .type {
@@ -257,9 +254,9 @@ label.radio input:checked + span {
 }
 
 .credit-inputs {
-  background: rgb(102,102,221);
+  background: rgb(102, 102, 221);
   color: #fff !important;
-  border-color: rgb(102,102,221);
+  border-color: rgb(102, 102, 221);
 }
 
 .credit-inputs::placeholder {
@@ -273,12 +270,12 @@ label.radio input:checked + span {
 }
 
 .form-control.credit-inputs:focus {
-  background: rgb(102,102,221);
-  border: rgb(102,102,221);
+  background: rgb(102, 102, 221);
+  border: rgb(102, 102, 221);
 }
 
 .line {
-  border-bottom: 1px solid rgb(102,102,221);
+  border-bottom: 1px solid rgb(102, 102, 221);
 }
 
 .information span {
@@ -291,7 +288,7 @@ label.radio input:checked + span {
 }
 
 .items {
-  -webkit-box-shadow: 5px 5px 4px -1px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.25);
   box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.08);
 }
 
