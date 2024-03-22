@@ -2,14 +2,13 @@ import "../resources/js/bootstrap.bundle.min.js";
 import Authenticator from "../src/authenticator.js";
 import Cart from "../src/cart.js";
 import Router from "../src/router.js";
-const cart = new Cart("cart");
-let count  = cart.productIds().length;
+
 let badge_span_header = document.querySelector("#badge-span-header");
-if(count){
-  badge_span_header.textContent=count;
-}
-else{
-  badge_span_header.style.display = "none";
+const cart = new Cart("cart");
+if (Authenticator.isLoggedIn()) {
+  badge_span_header.innerHTML = cart.productIds().length;
+} else {
+  badge_span_header.innerHTML = "";
 }
 const routes = new Router({
   home: {
