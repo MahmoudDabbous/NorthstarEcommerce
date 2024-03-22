@@ -79,7 +79,7 @@ li {
 }
 
 .itempage-header {
-  font-size: 3rem !important;
+  font-size: 2.5rem !important;
 }
 
 .itempage-price {
@@ -110,6 +110,18 @@ li {
 .itempage-icons {
   margin-top: 3rem !important;
   margin-bottom: 3rem !important;
+}
+
+.nav-tabs .nav-link {
+  color: #000 !important;
+  background-color: #fff !important;
+  border-color: #000 !important;
+}
+
+.nav-tabs .nav-link.active {
+  color: #fff !important;
+  background-color: #9e9e9e !important;
+  border-color: #000 !important;
 }
 /* css for common */
 
@@ -196,11 +208,12 @@ li {
 }
 
 .payment-info {
-  background: blue;
+  background: rgb(255, 255, 255);
   padding: 10px;
   border-radius: 6px;
-  color: #fff;
+  color: #000000;
   font-weight: bold;
+  box-shadow: #d4d4d4 0px 0px 10px;
 }
 
 .product-details {
@@ -254,18 +267,18 @@ label.radio span {
 
 label.radio input:checked + span {
   border-color: #fff;
-  background-color: blue;
+  background-color: rgb(37, 40, 233);
   color: #fff;
 }
 
 .credit-inputs {
-  background: rgb(102, 102, 221);
+  background: rgb(228, 228, 228);
   color: #fff !important;
-  border-color: rgb(102, 102, 221);
+  border-color: rgb(185, 185, 185);
 }
 
 .credit-inputs::placeholder {
-  color: #fff;
+  color: #000000;
   font-size: 13px;
 }
 
@@ -275,8 +288,8 @@ label.radio input:checked + span {
 }
 
 .form-control.credit-inputs:focus {
-  background: rgb(102, 102, 221);
-  border: rgb(102, 102, 221);
+  background: rgb(173, 173, 173);
+  border: rgb(90, 90, 90);
 }
 
 .line {
