@@ -1,10 +1,11 @@
 import Storage from "./storage.js";
 import Session from "./session.js";
-
+import Product from "./product.js";
 export default class User {
   constructor(email) {
     const storage = new Storage("users");
     const user = storage.read(email);
+    
 
     this.email = email;
     this.password = user.password;
@@ -32,13 +33,33 @@ export default class User {
  }
 
 
-  updatecount(productId, count) {
+  incre_count(productId,quantity) {
   
+    
     const existingProductIndex = this.readCart().findIndex(element => element.productId === productId);
 
     if (existingProductIndex !== -1) {
+      if(this.cart[existingProductIndex].count<quantity){
+        this.cart[existingProductIndex].count += 1;
+      }
+    } else {
+        
+        this.cart.push({ productId: productId, count: count });
+    }
+
+  
+    this.save();
+  } 
+
+  decre_count(productId) {
+  
+    const existingProductIndex = this.readCart().findIndex(element => element.productId === productId);
+
+    if (existingProductIndex !== -1 ) {
       
-        this.cart[existingProductIndex].count = count;
+      if(this.cart[existingProductIndex].count>1){
+        this.cart[existingProductIndex].count -= 1;
+      }
     } else {
         
         this.cart.push({ productId: productId, count: count });
@@ -47,7 +68,6 @@ export default class User {
   
     this.save();
   }
-
     removeFromCart(productIdToRemove) {
       
       const indexToRemove = this.cart.findIndex(item => item.productId === productIdToRemove);

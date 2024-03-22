@@ -55,10 +55,15 @@ addProduct.addEventListener("click", function (e) {
                 count: 1,
             };
             user.addToCart(productId,product);
+            badge_span_header.innerHTML=cart.productIds().length;
+
         }
-   
-  
-});
+        
+        
+    });
+    
+    
+    badge_span_header.innerHTML=cart.productIds().length;
 
 
-
+ 
