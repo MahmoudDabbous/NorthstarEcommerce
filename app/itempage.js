@@ -74,8 +74,12 @@ badge_span_header.textContent = cart.productIds().length;
 
 sendReview.addEventListener("submit", function (e) {
     e.preventDefault();
-    console.log(Product.addComment(productId, Authenticator.currentUser(), sendReview.message.value));
-    sendReview.message.value = "";
+    const msg = sendReview.message.value;
+    const form = e.target;
+    form.textContent = "Review sent";
+    form.disabled = true;
+    
+    Product.addComment(productId, Authenticator.currentUser(), msg);
     display();
 });
 
