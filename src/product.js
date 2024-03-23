@@ -1,90 +1,45 @@
+import Storage from "./storage.js";
 export default class Product {
   static abs_path_data =
     window.location.origin + "/ITI-Javascrit-Project/data/";
-  constructor(
-    id,
-    name,
-    price,
-    category,
-    description,
-    image,
-    rating,
-    comments,
-    quantity,
-    inCartOf,
-    inWishListOf
-  ) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.category = category;
-    this.description = description;
-    this.image = image;
-    this.rating = rating;
-    this.comments = comments;
-    this.quantity = quantity;
-    this.inCartOf = inCartOf;
-    this.inWishListOf = inWishListOf;
+  static storage = new Storage("produts");
+
+  static addComment(productId, user, comment) {
+    let oldProduct = Product.storage.read(productId);
+    let comments = oldProduct.comments;
+    let newComment = { user: user, comment: comment };
+    comments.push(newComment);
+    Product.storage.update_property(productId, "comments", comments);
+    return true;
   }
 
-  // Method to add a comment to the product
-  addComment(user, comment, rating) {
-    this.comments.push({ user, comment, rating });
+  static calculateTopSellers() {
+    const productsArray = Object.entries(Product.products()).map(([productId, product]) => ({
+      productId,
+      ...product
+    }));
+    productsArray.sort((a, b) => a.quantity - b.quantity);
+    return productsArray.slice(0, 4);
   }
 
-  // Method to increase the quantity of the product
-  increaseQuantity(amount) {
-    this.quantity += amount;
+  static products() {
+    return Product.storage.products();
   }
-
-  // Method to decrease the quantity of the product
-  decreaseQuantity(amount) {
-    if (this.quantity >= amount) {
-      this.quantity -= amount;
-    } else {
-      console.log("Error: Quantity cannot be decreased below 0.");
-    }
-  }
-
-  // Method to add the product to the cart of a user
-  addToCart(user) {
-    if (!this.inCartOf.includes(user)) {
-      this.inCartOf.push(user);
-    }
-  }
-
-  // Method to remove the product from the cart of a user
-  removeFromCart(user) {
-    const index = this.inCartOf.indexOf(user);
-    if (index !== -1) {
-      this.inCartOf.splice(index, 1);
-    }
-  }
-
-  // Method to add the product to the wish list of a user
-  addToWishList(user) {
-    if (!this.inWishListOf.includes(user)) {
-      this.inWishListOf.push(user);
-    }
-  }
-
-  // Method to remove the product from the wish list of a user
-  removeFromWishList(user) {
-    const index = this.inWishListOf.indexOf(user);
-    if (index !== -1) {
-      this.inWishListOf.splice(index, 1);
-    }
-  }
-
   static productsAll() {
-    return new Promise((resolve, reject) => {
-      fetch(Product.abs_path_data + "products.json")
-        .then((res) => {
-          if (!res.ok) throw new Error("File can't load");
-          return res.json();
-        })
-        .then((res) => resolve(res))
-        .catch((error) => reject(error));
-    });
+    fetch(Product.abs_path_data + "products.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("File can't load");
+        return res.json();
+      })
+      .then((products) => {
+        for (const productId in products) {
+          if (products.hasOwnProperty(productId)) {
+            const product = products[productId];
+            Product.storage.create(productId, product);
+          }
+        }
+      })
+      .catch((error) => console.log(error));
   }
+
 }

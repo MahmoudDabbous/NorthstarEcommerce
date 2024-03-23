@@ -1,7 +1,15 @@
 import "../resources/js/bootstrap.bundle.min.js";
 import Authenticator from "../src/authenticator.js";
+import Cart from "../src/cart.js";
 import Router from "../src/router.js";
 
+let badge_span_header = document.querySelector("#badge-span-header");
+const cart = new Cart("cart");
+if (Authenticator.isLoggedIn()) {
+  badge_span_header.innerHTML = cart.productIds().length;
+} else {
+  badge_span_header.innerHTML = "";
+}
 const routes = new Router({
   home: {
     linkLabel: "HOME",
@@ -13,16 +21,17 @@ const routes = new Router({
     namePage: "about",
     auth: false,
   },
+  contact: {
+    linkLabel: "CONTACT US",
+    namePage: "contact",
+    auth: false,
+    script: "contact",
+  },
   login: {
     linkLabel: "LOGIN",
     namePage: "login",
     auth: Authenticator.isLoggedIn(),
     script: "login",
-  },
-  contact: {
-    linkLabel: "CONTACT",
-    namePage: "contact",
-    auth: false,
   },
   register: {
     linkLabel: "REGISTER",
@@ -34,17 +43,37 @@ const routes = new Router({
     linkLabel: "",
     namePage: "profile",
     auth: !Authenticator.isLoggedIn(),
+    script: "profile",
   },
   itempage: {
     linkLabel: "",
     namePage: "itempage",
-    auth: false,
+    auth: !Authenticator.isLoggedIn(),
+    script: "itempage",
   },
   logout: {
-    linkLabel: "LOGOUT",
+    linkLabel: "Logout",
     namePage: "logout",
     auth: !Authenticator.isLoggedIn(),
     script: "logout",
+  },
+  cart: {
+    linkLabel: "CART",
+    namePage: "cart",
+    auth: !Authenticator.isLoggedIn(),
+    script: "addCart",
+  },
+  "edit-profile": {
+    linkLabel: "",
+    namePage: "edit-profile",
+    auth: !Authenticator.isLoggedIn(),
+    script: "edit-profile",
+  },
+  checkout: {
+    linkLabel: "",
+    namePage: "checkout",
+    auth: !Authenticator.isLoggedIn(),
+    script: "checkout",
   },
 });
 
@@ -60,15 +89,3 @@ const routes = new Router({
     });
   }
 })();
-
-/**
- *
- *  {
- *   "eksd@rfmds.com": {
- *      "password": "123456",
- *      "name": "Ahmed",
- *      "cart":[{}...],
- *      "wishlist":[{}...],
- *  }
- * }
- */

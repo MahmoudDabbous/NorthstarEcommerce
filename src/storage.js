@@ -28,11 +28,28 @@ export default class Storage {
       this.save();
     }
   }
+  update_property(key,property, value) {
+    if (this.data.hasOwnProperty(key)) {
+      this.data[key][property] = value;
+      this.save();
+    }
+  }
+
+
+  count()
+  {
+    return Object.keys(this.data).length;
+  }
 
   delete(key) {
     if (this.data.hasOwnProperty(key)) {
       delete this.data[key];
       this.save();
     }
+  }
+
+  products()
+  {
+    return this.data;
   }
 }

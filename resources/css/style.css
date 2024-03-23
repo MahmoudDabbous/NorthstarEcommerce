@@ -1,3 +1,19 @@
+body {
+  font-family: "Arimo", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+#app {
+  flex: 1;
+}
+@font-face {
+  font-family: Arimo;
+  src: url("../fonts/Arimo/static/Arimo-Regular.ttf");
+}
+a,
+li {
+  font-size: 1rem;
+}
 
 /* css for contact page */
 .contact-bg {
@@ -31,9 +47,6 @@
 .header-link-home {
   font-weight: bold;
 }
-#app {
-  /* height: 100vh; */
-}
 
 .navbar div {
   /* top left bottom right   */
@@ -45,12 +58,14 @@
   font-weight: bold !important;
 }
 
-#img-home {
-  background-image: url("../images/home-main.jpeg");
+.img-home {
   background-position: center;
   background-size: cover;
   min-height: 500px;
   max-height: 600px;
+}
+.shadow-img-home{
+  box-shadow: #d4d4d4 0px 0px 10px !important;
 }
 
 #badge-span-header {
@@ -66,7 +81,7 @@
 }
 
 .itempage-header {
-  font-size: 3rem !important;
+  font-size: 2.5rem !important;
 }
 
 .itempage-price {
@@ -98,6 +113,18 @@
   margin-top: 3rem !important;
   margin-bottom: 3rem !important;
 }
+
+.nav-tabs .nav-link {
+  color: #000 !important;
+  background-color: #fff !important;
+  border-color: #000 !important;
+}
+
+.nav-tabs .nav-link.active {
+  color: #fff !important;
+  background-color: #9e9e9e !important;
+  border-color: #000 !important;
+}
 /* css for common */
 
 .color-text-website {
@@ -108,9 +135,8 @@
 }
 
 .bg-c-lite-green {
-         
-         background: linear-gradient(to right, #024e82, #3a9ec0);
-    }
+  background: linear-gradient(to right, #024e82, #3a9ec0);
+}
 /* css for common  */
 
 .header-container-about {
@@ -121,7 +147,7 @@
   background-image: url("../images/header_img.jpg");
 }
 
-/* for 2 classes with the same name */
+/* for 2 classes with the same functionality*/
 .model1-about {
   width: calc(50% - 15px);
   height: 500px;
@@ -146,7 +172,11 @@
 }
 
 .testimonials-text-about {
-  margin-top: 200px;
+  margin-top: 100px;
+}
+
+.name-container-about {
+  margin-left: 120px;
 }
 
 @media (max-width: 575px) {
@@ -171,15 +201,114 @@
     background-size: contain !important;
     height: 350px !important;
   }
-}
-
-@media (max-width: 1000px) {
-  .founder-about {
-    width: 300px;
-  }
-  .founder-container-about {
-    flex-wrap: wrap; /* when overflowing wrap */
-    margin-top: 100px;
+  .founders-container-about {
+    display: none !important;
   }
 }
 
+.payment-info {
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 6px;
+  color: #000000;
+  font-weight: bold;
+  box-shadow: #d4d4d4 0px 0px 10px;
+}
+
+.product-details {
+  padding: 10px;
+}
+
+body {
+  background: #eee;
+}
+
+.cart {
+  background: #fff;
+}
+
+.p-about {
+  font-size: 12px;
+}
+
+.table-shadow {
+  -webkit-box-shadow: 5px 5px 15px -2px rgba(0, 0, 0, 0.42);
+  box-shadow: 5px 5px 15px -2px rgba(0, 0, 0, 0.42);
+}
+
+.type {
+  font-weight: 400;
+  font-size: 10px;
+}
+
+label.radio {
+  cursor: pointer;
+}
+
+label.radio input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+label.radio span {
+  padding: 1px 12px;
+  border: 2px solid #ada9a9;
+  display: inline-block;
+  color: #8f37aa;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 300;
+}
+
+label.radio input:checked + span {
+  border-color: #fff;
+  background-color: rgb(37, 40, 233);
+  color: #fff;
+}
+
+.credit-inputs {
+  background: rgb(102, 102, 221);
+  color: #fff !important;
+  border-color: rgb(102, 102, 221);
+}
+
+.credit-inputs::placeholder {
+  color: #000000;
+  font-size: 13px;
+}
+
+.credit-card-label {
+  font-size: 9px;
+  font-weight: 300;
+}
+
+.form-control.credit-inputs:focus {
+  background: rgb(102, 102, 221);
+  border: rgb(102, 102, 221);
+}
+
+.line {
+  border-bottom: 1px solid rgb(102, 102, 221);
+}
+
+.information span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.information {
+  margin-bottom: 5px;
+}
+
+.items {
+  -webkit-box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.08);
+}
+
+.spec {
+  font-size: 11px;
+}
