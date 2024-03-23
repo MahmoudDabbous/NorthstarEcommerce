@@ -30,7 +30,7 @@ function displayProducts() {
     item.removeChild(child);
   });
   let Allproducts = prds.products();
-  console.log(Allproducts, new User("users").Ids());
+  // console.log(Allproducts, new User("users").Ids());
   storage.productIds().forEach((element) => {
     const tempContainer = document.createElement("div");
     tempContainer.innerHTML = `
