@@ -1,6 +1,7 @@
 import Storage from "./storage.js";
 export default class Product {
-  static abs_path_data = window.location.origin + "/data/";
+  static abs_path_data =
+    window.location.origin + "/ITI-Javascrit-Project/data/";
   static storage = new Storage("produts");
 
   static addComment(productId, user, comment) {
@@ -13,12 +14,10 @@ export default class Product {
   }
 
   static calculateTopSellers() {
-    const productsArray = Object.entries(Product.products()).map(
-      ([productId, product]) => ({
-        productId,
-        ...product,
-      })
-    );
+    const productsArray = Object.entries(Product.products()).map(([productId, product]) => ({
+      productId,
+      ...product
+    }));
     productsArray.sort((a, b) => a.quantity - b.quantity);
     return productsArray.slice(0, 4);
   }
@@ -42,4 +41,5 @@ export default class Product {
       })
       .catch((error) => console.log(error));
   }
+
 }

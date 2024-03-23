@@ -1,5 +1,6 @@
 import Authenticator from "../src/authenticator.js";
 
+
 const form = document.querySelector("#app #register form");
 
 form.addEventListener("submit", (e) => {
@@ -20,7 +21,7 @@ form.addEventListener("submit", (e) => {
     phoneNum,
   });
   if (result) {
-    window.location.href = "/login";
+    window.location.href = "/ITI-Javascrit-Project/login";
   } else {
     const error = document.getElementById("form-error");
     error.innerHTML = "User already exists";
