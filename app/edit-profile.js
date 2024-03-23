@@ -53,6 +53,7 @@ function validateForm(e) {
       password: user.password,
       phoneNum: telInput.value,
       address: addressInput.value,
+      cart: user.cart,
     };
 
     User.updateUser(currentUser, updatedUser);

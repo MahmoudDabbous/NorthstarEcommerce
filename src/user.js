@@ -5,7 +5,6 @@ export default class User {
   constructor(email) {
     const storage = new Storage("users");
     const user = storage.read(email);
-    
 
     this.email = email;
     this.password = user.password;
@@ -21,82 +20,77 @@ export default class User {
     storage.update(this.email, this);
   }
 
-
-
   addToCart(productId, data) {
-    const exists = this.readCart().some(element => element.productId === productId);
+    const exists = this.readCart().some(
+      (element) => element.productId === productId
+    );
 
-      if (!exists) {
-          this.cart.push(data);
-          this.save();
-      }
- }
+    if (!exists) {
+      this.cart.push(data);
+      this.save();
+    }
+  }
 
-
-  incre_count(productId,quantity) {
-  
-    
-    const existingProductIndex = this.readCart().findIndex(element => element.productId === productId);
+  incre_count(productId, quantity) {
+    const existingProductIndex = this.readCart().findIndex(
+      (element) => element.productId === productId
+    );
 
     if (existingProductIndex !== -1) {
-      if(this.cart[existingProductIndex].count<quantity){
+      if (this.cart[existingProductIndex].count < quantity) {
         this.cart[existingProductIndex].count += 1;
       }
     } else {
-        
-        this.cart.push({ productId: productId, count: count });
+      this.cart.push({ productId: productId, count: count });
     }
 
-  
     this.save();
-  } 
+  }
 
   decre_count(productId) {
-  
-    const existingProductIndex = this.readCart().findIndex(element => element.productId === productId);
+    const existingProductIndex = this.readCart().findIndex(
+      (element) => element.productId === productId
+    );
 
-    if (existingProductIndex !== -1 ) {
-      
-      if(this.cart[existingProductIndex].count>1){
+    if (existingProductIndex !== -1) {
+      if (this.cart[existingProductIndex].count > 1) {
         this.cart[existingProductIndex].count -= 1;
       }
     } else {
-        
-        this.cart.push({ productId: productId, count: count });
+      this.cart.push({ productId: productId, count: count });
     }
 
-  
     this.save();
   }
-    removeFromCart(productIdToRemove) {
-      
-      const indexToRemove = this.cart.findIndex(item => item.productId === productIdToRemove);
-  
-      if (indexToRemove !== -1) {
-         
-          this.cart.splice(indexToRemove, 1);
-          this.save();
-          return true; 
-      } else {
-          
-          return false;
-      }
+  removeFromCart(productIdToRemove) {
+    const indexToRemove = this.cart.findIndex(
+      (item) => item.productId === productIdToRemove
+    );
+
+    if (indexToRemove !== -1) {
+      this.cart.splice(indexToRemove, 1);
+      this.save();
+      return true;
+    } else {
+      return false;
+    }
   }
-  
+
   getCount(productId) {
-    const product = this.readCart().find(item => item.productId === productId);
+    const product = this.readCart().find(
+      (item) => item.productId === productId
+    );
 
     return product ? product.count : 0;
-}
+  }
 
-  readCart()
-  {
+  readCart() {
     return this.cart;
   }
 
   Ids() {
-    return this.cart.map(item => item.productId);
-    }
+    return Object.keys(this.cart) ?? [];
+  }
 
   addToWishlist(productId) {
     this.wishlist.push(productId);
