@@ -64,7 +64,7 @@ li {
   min-height: 500px;
   max-height: 600px;
 }
-.shadow-img-home{
+.shadow-img-home {
   box-shadow: #d4d4d4 0px 0px 10px !important;
 }
 
@@ -166,18 +166,21 @@ li {
   background-image: url(../images/men/second_img.jpg);
 }
 
-.founders-text-about {
-  margin-top: 100px;
-  font-weight: bold;
+
+.img-about {
+  background-position: right;
+  background-size: cover;
+  height: 50vh;
+  width: 50vh;
 }
 
-.testimonials-text-about {
-  margin-top: 100px;
-}
 
-.name-container-about {
+
+
+
+/* .name-container-about {
   margin-left: 120px;
-}
+} */
 
 @media (max-width: 575px) {
   .comments-about {
@@ -200,9 +203,6 @@ li {
     width: 100% !important;
     background-size: contain !important;
     height: 350px !important;
-  }
-  .founders-container-about {
-    display: none !important;
   }
 }
 
@@ -312,3 +312,97 @@ label.radio input:checked + span {
 .spec {
   font-size: 11px;
 }
+
+
+
+
+
+
+
+
+
+/* adfasdasd */
+
+.section-wrapper {
+  background-color: #ebebeb;
+  padding: 30px;
+}
+h3 {
+  font-size: 34px;
+  color: #525252;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.carousel-wrapper {
+  font-family: "Lato", sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.carousel-wrapper * {
+  box-sizing: border-box;
+}
+.carousel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.carousel {
+  transform-style: preserve-3d;
+}
+
+.carousel__card {
+  background-color: #fff;
+  padding: 20px;
+  margin-right: 10px;
+  border: #fff solid 5px;
+  display: flex;
+  flex-direction: column;
+}
+.carousel__card {
+  opacity: 0.4;
+}
+.carousel__card.active {
+  opacity: 1;
+}
+.carousel__card {
+  transition: transform 0.5s;
+}
+.carousel__button--prev,
+.carousel__button--next {
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(0 0 0 / 24%);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+}
+.carousel__button--prev {
+  left: 0;
+}
+.carousel__button--next {
+  right: 0;
+}
+.carousel__button--prev::after,
+.carousel__button--next::after {
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 54%;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.carousel__button--next::after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+

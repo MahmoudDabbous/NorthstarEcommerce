@@ -20,6 +20,7 @@ const routes = new Router({
     linkLabel: "ABOUT",
     namePage: "about",
     auth: false,
+    script:"about"
   },
   contact: {
     linkLabel: "CONTACT US",
