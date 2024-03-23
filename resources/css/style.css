@@ -166,21 +166,12 @@ li {
   background-image: url(../images/men/second_img.jpg);
 }
 
-
 .img-about {
   background-position: right;
   background-size: cover;
   height: 50vh;
   width: 50vh;
 }
-
-
-
-
-
-/* .name-container-about {
-  margin-left: 120px;
-} */
 
 @media (max-width: 575px) {
   .comments-about {
@@ -203,6 +194,9 @@ li {
     width: 100% !important;
     background-size: contain !important;
     height: 350px !important;
+  }
+  .founders-container-about {
+    display: none !important;
   }
 }
 
@@ -313,14 +307,6 @@ label.radio input:checked + span {
   font-size: 11px;
 }
 
-
-
-
-
-
-
-
-
 /* adfasdasd */
 
 .section-wrapper {
@@ -405,4 +391,3 @@ h3 {
   left: 47%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-
