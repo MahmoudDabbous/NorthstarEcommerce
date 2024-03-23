@@ -85,8 +85,7 @@ const routes = new Router({
     logout.addEventListener("click", (e) => {
       e.preventDefault();
       Authenticator.logout();
-      window.location.href =
-        window.location.origin + "/ITI-Javascrit-Project/login";
+      window.location.href = window.location.origin + "/login";
     });
   }
 })();

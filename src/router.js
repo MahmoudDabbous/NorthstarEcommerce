@@ -2,10 +2,8 @@ import Authenticator from "./authenticator.js";
 
 export default class Router {
   constructor(routes) {
-    this.abs_path_pages =
-      window.location.origin + "/ITI-Javascrit-Project/pages/";
-    this.abs_path_scripts =
-      window.location.origin + "/ITI-Javascrit-Project/app/";
+    this.abs_path_pages = window.location.origin + "/pages/";
+    this.abs_path_scripts = window.location.origin + "/app/";
     this.routes = routes;
     this.links = document.getElementById("links");
     this.offcanvas = document.querySelector("#offcanvas");
@@ -22,8 +20,7 @@ export default class Router {
         `;
         if (namePage == "logout")
           this.offcanvas.insertAdjacentHTML("beforeend", str);
-        else
-          this.links.insertAdjacentHTML("beforeend", str);
+        else this.links.insertAdjacentHTML("beforeend", str);
       }
     });
 
@@ -46,7 +43,7 @@ export default class Router {
   }
 
   loadContent() {
-    let route = window.location.pathname.split("/")[2].toLowerCase();
+    let route = window.location.pathname.split("/")[1].toLowerCase();
     const { auth, script } = this.routes[route] || {};
     let html =
       this.abs_path_pages +
@@ -54,9 +51,9 @@ export default class Router {
       ".html";
     if (auth) {
       if (!Authenticator.isLoggedIn()) {
-        window.location.href = "/ITI-Javascrit-Project/login";
+        window.location.href = "/login";
       } else {
-        window.location.href = "/ITI-Javascrit-Project/profile";
+        window.location.href = "/profile";
       }
       return;
     }
