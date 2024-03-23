@@ -89,7 +89,7 @@ export default class User {
   }
 
   Ids() {
-    return Object.keys(this.cart) ?? [];
+    return this.cart.map((item) => item.productId);
   }
 
   addToWishlist(productId) {
