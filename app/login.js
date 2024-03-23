@@ -8,7 +8,8 @@ form.addEventListener("submit", (e) => {
   const password = form.password.value;
   const result = Authenticator.login(email, password);
   if (result) {
-    window.location.href = window.location.origin + "/profile";
+    window.location.href =
+      window.location.origin + "/ITI-Javascrit-Project/profile";
   } else {
     const error = document.getElementById("form-error");
     error.classList.remove("d-none");

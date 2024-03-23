@@ -20,7 +20,7 @@ const routes = new Router({
     linkLabel: "ABOUT",
     namePage: "about",
     auth: false,
-    script:"about"
+    script: "about",
   },
   contact: {
     linkLabel: "CONTACT US",
@@ -85,7 +85,8 @@ const routes = new Router({
     logout.addEventListener("click", (e) => {
       e.preventDefault();
       Authenticator.logout();
-      window.location.href = window.location.origin + "/login";
+      window.location.href =
+        window.location.origin + "/ITI-Javascrit-Project/login";
     });
   }
 })();

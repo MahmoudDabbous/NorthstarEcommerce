@@ -2,8 +2,10 @@ import Authenticator from "./authenticator.js";
 
 export default class Router {
   constructor(routes) {
-    this.abs_path_pages = window.location.origin + "/pages/";
-    this.abs_path_scripts = window.location.origin + "/app/";
+    this.abs_path_pages =
+      window.location.origin + "/ITI-Javascrit-Project/pages/";
+    this.abs_path_scripts =
+      window.location.origin + "/ITI-Javascrit-Project/app/";
     this.routes = routes;
     this.links = document.getElementById("links");
     this.offcanvas = document.querySelector("#offcanvas");
@@ -43,7 +45,7 @@ export default class Router {
   }
 
   loadContent() {
-    let route = window.location.pathname.split("/")[1].toLowerCase();
+    let route = window.location.pathname.split("/")[2].toLowerCase();
     const { auth, script } = this.routes[route] || {};
     let html =
       this.abs_path_pages +
@@ -51,9 +53,9 @@ export default class Router {
       ".html";
     if (auth) {
       if (!Authenticator.isLoggedIn()) {
-        window.location.href = "/login";
+        window.location.href = "/ITI-Javascrit-Project/login";
       } else {
-        window.location.href = "/profile";
+        window.location.href = "/ITI-Javascrit-Project/profile";
       }
       return;
     }

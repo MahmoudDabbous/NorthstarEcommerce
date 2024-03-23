@@ -1,6 +1,7 @@
 import Storage from "./storage.js";
 export default class Product {
-  static abs_path_data = window.location.origin + "/data/";
+  static abs_path_data =
+    window.location.origin + "/ITI-Javascrit-Project/data/";
   static storage = new Storage("produts");
 
   static addComment(productId, user, comment) {
