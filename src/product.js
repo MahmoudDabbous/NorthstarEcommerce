@@ -2,9 +2,15 @@ import Storage from "./storage.js";
 export default class Product {
   static abs_path_data =
     window.location.origin + "/ITI-Javascrit-Project/data/";
-  static storage = new Storage("products");
-  addComment(user, comment, rating) {
-    this.comments.push({ user, comment, rating });
+  static storage = new Storage("produts");
+
+  static addComment(productId, user, comment) {
+    let oldProduct = Product.storage.read(productId);
+    let comments = oldProduct.comments;
+    let newComment = { user: user, comment: comment };
+    comments.push(newComment);
+    Product.storage.update_property(productId, "comments", comments);
+    return true;
   }
 
   static calculateTopSellers() {

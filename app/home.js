@@ -1,10 +1,10 @@
 import Product from "../src/product.js";
 let cardsRecently = document.querySelector("#cards-recently");
 let topSeller = document.querySelector("#top-seller");
-let imageCarousel = ["carousel1", "carousel2"];
+let imageCarousel = ["carousel1", "carousel2", "carousel3", "carousel5"];
 let carousel = document.querySelector("#carousel-inner");
 
-if (!localStorage.getItem("products")) {
+if (!localStorage.getItem("produts")) {
   Product.productsAll();
 }
 let count = 0;
@@ -72,7 +72,7 @@ Product.calculateTopSellers().forEach((product, index) => {
       }
       let card = `
              <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="card border-0 text-center">
+                <div class="card border-0 rounded-0 shadow-img-home text-center">
                     <a href="itempage?id=${productId}"><img style="min-height:200px;max-height:200px" class="img-thumbnail rounded-0 border-0" src="resources/images/cart/${product.image}"  alt="..."></a>
                    <div class="card-body">
                         <h5 class="card-title">${product.name}</h5>

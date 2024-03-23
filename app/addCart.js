@@ -7,7 +7,7 @@ const items = document.querySelector("#items");
 const item = document.querySelector("#item");
 
 const storage = new Cart("cart");
-const prds = new Storage("products");
+const prds = new Storage("produts");
 
 //---------------------remove product From Local Storage---------------------------------------
 function removeFromLocalStorage(productId) {
